@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<br>
+<p>
+  <strong>Name:</strong>
+  <strong><%= @company.name %></strong>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @company.note %>
+</p>
+
+<%= link_to 'Edit', edit_company_path(@company), class: "btn btn-warning" %> |
+<%= link_to 'Back', companies_path, class: "btn btn-default" %>

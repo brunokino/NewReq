@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<br>
+<%= link_to 'New Employee', new_employee_path, class: "btn btn-lg btn-primary" %>
+<br>
+<br>
+<br>
+<div class="container">
+  <h4>Listing Employees</h4>
+  <p></p>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Manager</th>
+        <th>Company</th>
+        <th>Site</th>
+        <th>Department</th>
+        <th colspan="3">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @employees.each do |employee| %>
+        <tr>
+          <td><%= employee.name %></td>
+          <td><%= employee.username %></td>
+          <td><%= employee.login.name %></td>
+          <td><%= employee.company.name %></td>
+          <td><%= employee.site.name %></td>
+          <td><%= employee.department %></td>
+          <td>
+            <%= link_to 'Show', employee, class: "btn btn-primary" %>
+            <%= link_to 'Edit', edit_employee_path(employee), class: "btn btn-warning" %>
+            <%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<br>
+<br>
+<br>
+<%= link_to 'New Employee', new_employee_path, class: "btn btn-lg btn-primary" %>
