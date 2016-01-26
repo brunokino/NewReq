@@ -1,28 +1,19 @@
-== README
+== NewReq
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+NewReq is a simple and flexible tool for managing user access requests. But still in development
 
-Things you may want to cover:
 
-* Ruby version
+Key Features:
 
-* System dependencies
+* Self Service access request
 
-* Configuration
+* Approval workflow
 
-* Database creation
+* LDAP integration
 
-* Database initialization
+* Flexible entries
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+* Ruby on Rails Plataform
 
 * ...
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
