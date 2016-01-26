@@ -15,5 +15,7 @@ Key Features:
 
 * Ruby on Rails Plataform
 
-* ...
+
+Contact: Bruno Kinoshita 
+Email: brunokino@gmail.com
 
