@@ -18,17 +18,17 @@ dn = "cn=Bruno Kinoshita,ou=usuarios,dc=intranet,dc=local"
                   :objectclass => "User",
                   :givenname => "Bruno",
                   :sn => 'Kinoshita',
-                  :telephoneNumber => "(17)3333-3333",
+                  :telephoneNumber => "(11)3333-3333",
                   :mail => "brunokino@gmail.com",
                   :l => "Barretos",
                   :st => "SP",
                   :title => "Supervisor de Infraestrutura",
                   :description => "Supervisor de Infraestrutura",
-                  :physicaldeliveryofficename => "Bebedouro I",
+                  :physicaldeliveryofficename => "Office name",
                   :initials => "BOK",
                   :c => "BR",
                   :department => "Tecnologia da Informação",
-                  :company => "Comfrio Stock Tech"
+                  :company => "Company name"
                   
                   
                   
