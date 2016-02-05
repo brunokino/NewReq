@@ -1,12 +1,21 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  # ==> LDAP Configuration 
+  # config.ldap_logger = true
+  config.ldap_create_user = true
+  config.ldap_update_password = false
+  # config.ldap_config = "#{Rails.root}/config/ldap.yml"
+  # config.ldap_check_group_membership = false
+  # config.ldap_check_attributes = false
+  # config.ldap_use_admin_to_bind = false
+  
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'bd3563a61126b559f9f037b64d5af9b5fd6f8cdc3872d253a666bc3fbb1a858aa75c00650aea8cae444312de7f354c9fa1259039795d28605973422338b2016e'
+  # config.secret_key = 'b3adbbff4d192683b5df7cce2d2855798697f32631464e9ec4c63dd76bf46fa78575ea1c38c6b4e73eccb982b70ccd235fb3867fbe33a1680b5e7e6404c5645d'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -31,7 +40,7 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-  # config.authentication_keys = [:email]
+  config.authentication_keys = [:login]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -99,7 +108,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '0c5a86628683345f05aaf1152537460b858248b46e5e5b079b1e895c2144d534d429378031283faa5b801b04e6b3494863dc27b28cf8168d24cda767fd46d0f4'
+  # config.pepper = '7dbd7a2a7894233faf00a321512658524e0726766cc725b3c265f38fbfd45bb6a3a4ab8a433ff6ed691a3a06d99f398a129c336f3bf56188f01a11361432181d'
 
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false

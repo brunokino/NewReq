@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/cschiewek/devise_ldap_authenticatable.git
+  revision: 8c980a55981c1ccd9f284779bbe77d1209355252
+  specs:
+    devise_ldap_authenticatable (0.8.6)
+      devise (>= 3.4.1)
+      net-ldap (>= 0.6.0, <= 0.11)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -64,9 +72,6 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    devise_ldap_authenticatable (0.4.4)
-      devise (> 1.0.4)
-      net-ldap (>= 0.1.1)
     erubis (2.7.0)
     execjs (2.6.0)
     globalid (0.3.6)
@@ -88,7 +93,8 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.3)
     multi_json (1.11.2)
-    net-ldap (0.13.0)
+    net-ldap (0.11)
+    newrelic_rpm (3.14.2.312)
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
@@ -167,11 +173,12 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   byebug
   coffee-rails (~> 4.1.0)
-  devise
-  devise_ldap_authenticatable
+  devise (~> 3.5.5)
+  devise_ldap_authenticatable!
   jbuilder (~> 2.0)
   jquery-rails
-  net-ldap
+  net-ldap (~> 0.11.0)
+  newrelic_rpm
   rails (= 4.2.5)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

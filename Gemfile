@@ -1,8 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'net-ldap'
-gem 'devise'
-gem "devise_ldap_authenticatable"
+gem 'devise', '~> 3.5.5'
+gem "devise_ldap_authenticatable", :git => "git://github.com/cschiewek/devise_ldap_authenticatable.git"
+gem 'net-ldap', '~> 0.11.0'
+#gem 'net-ldap'
+#gem 'devise'
+#gem 'devise_ldap_authenticatable'
+gem 'newrelic_rpm'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
