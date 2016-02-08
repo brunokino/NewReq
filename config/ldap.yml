@@ -20,10 +20,10 @@ authorizations: &AUTHORIZATIONS
 development:
   host: 130.211.138.238
   port: 389
-  attribute: cn
-  base: ou=usuarios,dc=intranet,dc=local
-  admin_user: cn=svc-ldap,ou=usuarios,dc=intranet,dc=local
-  admin_password: NewReq@123
+  attribute: sAMAccountName
+  base: "ou=usuarios,dc=intranet,dc=local"
+  admin_user: "cn=svc-ldap,ou=usuarios,dc=intranet,dc=local"
+  admin_password: "NewReq@123"
   ssl: false
   # <<: *AUTHORIZATIONS
 
