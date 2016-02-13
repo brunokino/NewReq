@@ -1,16 +1,16 @@
 require 'rubygems'
 require 'net/ldap'
 
-ldap = Net::LDAP.new :host => "104.199.128.84",
+ldap = Net::LDAP.new :host => "130.211.138.238",
      :port => 389,
      :auth => {
            :method => :simple,
-           :username => "cn=teste,ou=usuarios,dc=intranet,dc=local",
-           :password => "rails@BR001"
+           :username => "cn=svc-ldap,ou=usuarios,dc=intranet,dc=local",
+           :password => "NewReq@123"
      }
 
-filter = Net::LDAP::Filter.eq( "cn", "Maisa*" )
-treebase = "dc=intranet,dc=local"
+filter = Net::LDAP::Filter.eq( "sAMAccountName", "bkinoshita" )
+treebase = "ou=usuarios,dc=intranet,dc=local"
 
 ldap.search( :base => treebase, :filter => filter ) do |entry|
   puts "DN: #{entry.dn}"
