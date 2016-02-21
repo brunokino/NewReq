@@ -1,0 +1,1 @@
+json.extract! @newuser, :id, :firstname, :lastname, :username, :title, :description, :company_id, :site_id, :department, :grant_id, :phone, :mobile, :homephone, :ipphone, :pager, :Office, :City, :address, :State, :Country, :postalcode, :pobox, :website, :created_at, :updated_at

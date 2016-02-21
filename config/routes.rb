@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :ldap
+  resources :newusers
+  resources :grants
   get 'users/index'
   get 'users/show' => 'users#show'
 
 
   devise_for :users
-  resources :employees
-  resources :logins
   resources :sites
   resources :companies
   root 'static_pages#home'

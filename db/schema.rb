@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160208170039) do
+ActiveRecord::Schema.define(version: 20160216104518) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -20,28 +20,39 @@ ActiveRecord::Schema.define(version: 20160208170039) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "employees", force: :cascade do |t|
-    t.string   "name"
+  create_table "grants", force: :cascade do |t|
     t.string   "username"
-    t.string   "login_id"
-    t.string   "company_id"
-    t.string   "site_id"
-    t.string   "department"
-    t.string   "phone"
-    t.string   "phoneext"
-    t.string   "mobilephone"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "logins", force: :cascade do |t|
-    t.string   "name"
-    t.string   "username"
-    t.string   "password"
     t.boolean  "manager"
     t.boolean  "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "newusers", force: :cascade do |t|
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "username"
+    t.string   "title"
+    t.string   "description"
+    t.string   "company_id"
+    t.string   "site_id"
+    t.string   "department"
+    t.string   "grant_id"
+    t.string   "phone"
+    t.string   "mobile"
+    t.string   "homephone"
+    t.string   "ipphone"
+    t.string   "pager"
+    t.string   "Office"
+    t.string   "City"
+    t.string   "address"
+    t.string   "State"
+    t.string   "Country"
+    t.string   "postalcode"
+    t.string   "pobox"
+    t.string   "website"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "sites", force: :cascade do |t|

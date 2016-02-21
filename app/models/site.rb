@@ -1,4 +1,4 @@
 class Site < ActiveRecord::Base
     belongs_to :company
-    has_many :employees
+    has_many :newusers
 end

@@ -1,4 +1,4 @@
 class Company < ActiveRecord::Base
     has_many :sites
-    has_many :employees
+    has_many :newusers
 end

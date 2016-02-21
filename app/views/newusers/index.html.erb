@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Newusers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Username</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Company</th>
+      <th>Site</th>
+      <th>Department</th>
+      <th>Grant</th>
+      <th>Phone</th>
+      <th>Mobile</th>
+      <th>Homephone</th>
+      <th>Ipphone</th>
+      <th>Pager</th>
+      <th>Office</th>
+      <th>City</th>
+      <th>Address</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>Postalcode</th>
+      <th>Pobox</th>
+      <th>Website</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @newusers.each do |newuser| %>
+      <tr>
+        <td><%= newuser.firstname %></td>
+        <td><%= newuser.lastname %></td>
+        <td><%= newuser.username %></td>
+        <td><%= newuser.title %></td>
+        <td><%= newuser.description %></td>
+        <td><%= newuser.company_id %></td>
+        <td><%= newuser.site_id %></td>
+        <td><%= newuser.department %></td>
+        <td><%= newuser.grant_id %></td>
+        <td><%= newuser.phone %></td>
+        <td><%= newuser.mobile %></td>
+        <td><%= newuser.homephone %></td>
+        <td><%= newuser.ipphone %></td>
+        <td><%= newuser.pager %></td>
+        <td><%= newuser.Office %></td>
+        <td><%= newuser.City %></td>
+        <td><%= newuser.address %></td>
+        <td><%= newuser.State %></td>
+        <td><%= newuser.Country %></td>
+        <td><%= newuser.postalcode %></td>
+        <td><%= newuser.pobox %></td>
+        <td><%= newuser.website %></td>
+        <td><%= link_to 'Show', newuser %></td>
+        <td><%= link_to 'Edit', edit_newuser_path(newuser) %></td>
+        <td><%= link_to 'Destroy', newuser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Newuser', new_newuser_path %>
