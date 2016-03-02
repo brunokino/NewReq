@@ -18,7 +18,7 @@ authorizations: &AUTHORIZATIONS
 ## Enviornments
 
 development:
-  host: 130.211.138.238
+  host: 52.37.2.155
   port: 389
   attribute: sAMAccountName
   base: "ou=usuarios,dc=intranet,dc=local"
