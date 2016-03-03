@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <%= link_to 'COMPANY', root_path, class: "navbar-brand" %>
+                <%= link_to 'COMPANY NAME', root_path, class: "navbar-brand" %>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -19,8 +19,14 @@
                     </li>
 
                     <li>
-                        <a href="#">New Request</a>
+                        <%= link_to 'Request New User', new_newuser_path %>
                     </li>
+
+
+                    <li>
+                        <%= link_to 'My informations', users_show_path %>
+                    </li>
+
                     
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Places <span class="caret"></span></a>
@@ -35,8 +41,9 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><%= link_to 'New user requests', newusers_path %></li>
-                            <li><%= link_to 'Portal Managers / Admin', grants_path %></li>
+                            <li><%= link_to 'User Creation Requests', newusers_path %></li>
+                            <li><%= link_to 'Approvers / Admin', grants_path %></li>
+                            <li><%= link_to 'Users Who Have Signed', users_index_path %></li>
                         </ul>
                     </li>
 

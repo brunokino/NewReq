@@ -1,18 +1,20 @@
 Rails.application.routes.draw do
 
-  get 'ldap/create/:id' => 'ldap#create'
+  root 'static_pages#home'
 
+  get 'ldap/build/:id' => 'ldap#build'
+  get 'ldap/create/:id' => 'ldap#create'
+  get 'users/index'
+  get 'users/show' => 'users#show'
+  
   resources :ldap
   resources :newusers
   resources :grants
-  get 'users/index'
-  get 'users/show' => 'users#show'
-
-
-  devise_for :users
   resources :sites
   resources :companies
-  root 'static_pages#home'
+  
+  devise_for :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

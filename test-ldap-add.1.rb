@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'net/ldap'
 
-ldap = Net::LDAP.new :host => "130.211.138.238",
+ldap = Net::LDAP.new :host => "52.37.141.91",
      :port => 389,
      :auth => {
            :method => :simple,

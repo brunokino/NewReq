@@ -6,28 +6,25 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Username</th>
-      <th>Title</th>
-      <th>Company</th>
-      <th>Site</th>
+      <th>Name</th>
+      <th>sAMAccountName</th>
+      <th>CN</th>
+      <th>userPrincipalName</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @newusers.each do |newuser| %>
+    <% @newuserldap.each do |newuserldap| %>
       <tr>
-        <td><%= newuser.id %></td>
-        <td><%= newuser.firstname %></td>
-        <td><%= newuser.lastname %></td>
-        <td><%= newuser.username %></td>
-        <td><%= newuser.title %></td>
-        <td><%= newuser.company_id %></td>
-        <td><%= newuser.site_id %></td>
-        <td><%= link_to 'Add to LDAP', newuser %></td>
-        <td><%= link_to 'Ignore', edit_newuser_path(newuser) %></td>
+        <td><%= newuserldap.id %></td>
+        <td><%= newuserldap.displayname %></td>
+        <td><%= newuserldap.sAMAccountName %></td>
+        <td><%= newuserldap.cn %></td>
+        <td><%= newuserldap.userPrincipalName %></td>
+        <td><%= link_to 'Show', action: "show", id: newuserldap.newusers_id %></td>
+        
+        <td></td>
       </tr>
     <% end %>
   </tbody>

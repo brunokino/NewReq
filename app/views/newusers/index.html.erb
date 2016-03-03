@@ -57,6 +57,7 @@
         <td><%= newuser.pobox %></td>
         <td><%= newuser.website %></td>
         <td><%= link_to 'Show', newuser %></td>
+        <td><%= link_to 'Prepare to AD', :controller => :ldap, :action => :create, :id => newuser.id %></td>
         <td><%= link_to 'Edit', edit_newuser_path(newuser) %></td>
         <td><%= link_to 'Destroy', newuser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

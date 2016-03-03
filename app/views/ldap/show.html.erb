@@ -1,60 +1,58 @@
-dn: <%= @dn %>
+dn: <%= @newuserldap.dn %>
 <BR>
-cn: <%= @cn %>
+cn: <%= @newuserldap.cn %>
 <BR>
-userPrincipalName: <%= @userPrincipalName %>
+userPrincipalName: <%= @newuserldap.userPrincipalName %>
 <BR>
-E-mail: <%= @email %>    
+E-mail: <%= @newuserldap.mail %>    
 <BR>
-sAMAccountName: <%= @sAMAccountName %>
+sAMAccountName: <%= @newuserldap.sAMAccountName %>
 <BR>
-name: <%= @name %>
+name: <%= @newuserldap.name %>
 <BR>
-displayname: <%= @displayname %>
+displayname: <%= @newuserldap.displayname %>
 <BR>
-objectclass: <%= @objectclass %>
+objectclass: <%= @newuserldap.objectclass %>
 <BR>
-givenname: <%= @givenname %>
+givenname: <%= @newuserldap.givenname %>
 <BR>
-sn: <%= @sn %>
+sn: <%= @newuserldap.sn %>
 <BR>
-telephoneNumber: <%= @telephoneNumber %>
+telephoneNumber: <%= @newuserldap.telephoneNumber %>
 <BR>
-facsimileTelephoneNumber: <%= @facsimileTelephoneNumber %>
+facsimileTelephoneNumber: <%= @newuserldap.facsimileTelephoneNumber %>
 <BR>
-homePhone: <%= @homePhone %>
+homePhone: <%= @newuserldap.homePhone %>
 <BR>
-ipPhone: <%= @ipPhone %>
+ipPhone: <%= @newuserldap.ipPhone %>
 <BR>
-mobile: <%= @mobile %>
+mobile: <%= @newuserldap.mobile %>
 <BR>
-l: <%= @l %>
+l: <%= @newuserldap.l %>
 <BR>
-st: <%= @st %>
+st: <%= @newuserldap.st %>
 <BR>
-title: <%= @title %>
+title: <%= @newuserldap.title %>
 <BR>
-description: <%= @description %>
+description: <%= @newuserldap.description %>
 <BR>
-c: <%= @c %>
+c: <%= @newuserldap.c %>
 <BR>
-department: <%= @department %>
+department: <%= @newuserldap.department %>
 <BR>
-company: <%= @company %>
+company: <%= @newuserldap.company %>
 <BR>
-streetAddress: <%= @streetAddress %>
+streetAddress: <%= @newuserldap.streetAddress %>
 <BR>
-postalCode: <%= @postalCode %>
+postalCode: <%= @newuserldap.postalCode %>
 <BR>
-postOfficeBox: <%= @postOfficeBox %>
+postOfficeBox: <%= @newuserldap.postOfficeBox %>
 <BR>
-manager: <%= @manager %>
+manager: <%= @newuserldap.manager %>
 <BR>
-proxyAddresses: <%= @proxyAddresses %>
+proxyAddresses: <%= @newuserldap.proxyAddresses %>
 <BR>
-wWWHomePage: <%= @wWWHomePage %>
+wWWHomePage: <%= @newuserldap.wWWHomePage %>
 <BR>
-userPassword: <%= @userPassword %>
-
+userPassword: <%= @newuserldap.userPassword %>
 <BR><BR><BR><BR>
-<%= link_to 'Prepare to AD', :action => :create, :id => @newuser.id %>
