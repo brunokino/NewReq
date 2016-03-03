@@ -4,6 +4,8 @@ cn: <%= @cn %>
 <BR>
 userPrincipalName: <%= @userPrincipalName %>
 <BR>
+E-mail: <%= @email %>    
+<BR>
 sAMAccountName: <%= @sAMAccountName %>
 <BR>
 name: <%= @name %>
@@ -53,3 +55,6 @@ proxyAddresses: <%= @proxyAddresses %>
 wWWHomePage: <%= @wWWHomePage %>
 <BR>
 userPassword: <%= @userPassword %>
+
+<BR><BR><BR><BR>
+<%= link_to 'Prepare to AD', :action => :create, :id => @newuser.id %>

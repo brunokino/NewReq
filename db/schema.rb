@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160216104518) do
+ActiveRecord::Schema.define(version: 20160303011524) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -26,6 +26,42 @@ ActiveRecord::Schema.define(version: 20160216104518) do
     t.boolean  "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "newuserldaps", force: :cascade do |t|
+    t.string   "dn"
+    t.string   "objectclass"
+    t.string   "givenname"
+    t.string   "sn"
+    t.string   "cn"
+    t.string   "name"
+    t.string   "displayname"
+    t.string   "userPrincipalName"
+    t.string   "sAMAccountName"
+    t.string   "title"
+    t.string   "description"
+    t.string   "company"
+    t.string   "department"
+    t.string   "telephoneNumber"
+    t.string   "facsimileTelephoneNumber"
+    t.string   "homePhone"
+    t.string   "ipPhone"
+    t.string   "mobile"
+    t.string   "physicalDeliveryOfficeName"
+    t.string   "l"
+    t.string   "st"
+    t.string   "streetAddress"
+    t.string   "postalCode"
+    t.string   "postOfficeBox"
+    t.string   "c"
+    t.string   "manager"
+    t.string   "mail"
+    t.string   "proxyAddresses"
+    t.string   "wWWHomePage"
+    t.string   "userPassword"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "newusers_id"
   end
 
   create_table "newusers", force: :cascade do |t|

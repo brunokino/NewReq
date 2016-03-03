@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'ldap/create/:id' => 'ldap#create'
+
   resources :ldap
   resources :newusers
   resources :grants

@@ -1,0 +1,65 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dn: MyString
+  objectclass: MyString
+  givenname: MyString
+  sn: MyString
+  cn: MyString
+  name: MyString
+  displayname: MyString
+  userPrincipalName: MyString
+  sAMAccountName: MyString
+  title: MyString
+  description: MyString
+  company: MyString
+  department: MyString
+  telephoneNumber: MyString
+  facsimileTelephoneNumber: MyString
+  homePhone: MyString
+  ipPhone: MyString
+  mobile: MyString
+  physicalDeliveryOfficeName: MyString
+  l: MyString
+  st: MyString
+  streetAddress: MyString
+  postalCode: MyString
+  postOfficeBox: MyString
+  c: MyString
+  manager: MyString
+  mail: MyString
+  proxyAddresses: MyString
+  wWWHomePage: MyString
+  userPassword: MyString
+
+two:
+  dn: MyString
+  objectclass: MyString
+  givenname: MyString
+  sn: MyString
+  cn: MyString
+  name: MyString
+  displayname: MyString
+  userPrincipalName: MyString
+  sAMAccountName: MyString
+  title: MyString
+  description: MyString
+  company: MyString
+  department: MyString
+  telephoneNumber: MyString
+  facsimileTelephoneNumber: MyString
+  homePhone: MyString
+  ipPhone: MyString
+  mobile: MyString
+  physicalDeliveryOfficeName: MyString
+  l: MyString
+  st: MyString
+  streetAddress: MyString
+  postalCode: MyString
+  postOfficeBox: MyString
+  c: MyString
+  manager: MyString
+  mail: MyString
+  proxyAddresses: MyString
+  wWWHomePage: MyString
+  userPassword: MyString
