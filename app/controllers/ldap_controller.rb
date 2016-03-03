@@ -99,9 +99,9 @@ class LdapController < ApplicationController
                   :proxyAddresses => @newuserldap.proxyAddresses,
                   :wWWHomePage => @newuserldap.wWWHomePage,
                   :userPassword => @newuserldap.userPassword
-                }
+                }.reject { |key,value| value.empty? }
                 
-      ldap.add(:dn => dn, :attributes => attr.reject!(&:blank?))
+      ldap.add(:dn => dn, :attributes => attr)
     end
 
 
