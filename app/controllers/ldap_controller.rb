@@ -3,7 +3,6 @@ class LdapController < ApplicationController
     before_action :set_newuserldap, only: [:show, :build]
     before_action :load_attributes, only: [:create]
     
-    
     def index
       @newuserldap = Newuserldap.all
     end
@@ -105,10 +104,13 @@ class LdapController < ApplicationController
     end
 
 
-
-
-
-    
+    def destroy
+      @site.destroy
+      respond_to do |format|
+        format.html { redirect_to sites_url, notice: 'Site was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    end
 
 
 
@@ -145,14 +147,14 @@ private
       @homePhone = @newuser.homephone
       @ipPhone = @newuser.ipphone
       @mobile = @newuser.mobile
-      @physicalDeliveryOfficeName = @newuser.Office
+      @physicalDeliveryOfficeName = @newuser.site.name
       @l = @newuser.City
       @st = @newuser.State
       @title = @newuser.title
       @description = @newuser.description
       @c = @newuser.Country
       @department = @newuser.department
-      @company = @newuser.company_id
+      @company = @newuser.company.name
       @streetAddress = @newuser.address
       @postalCode = @newuser.postalcode
       @postOfficeBox = @newuser.pobox

@@ -1,58 +1,37 @@
-dn: <%= @newuserldap.dn %>
-<BR>
-cn: <%= @newuserldap.cn %>
-<BR>
-userPrincipalName: <%= @newuserldap.userPrincipalName %>
-<BR>
-E-mail: <%= @newuserldap.mail %>    
-<BR>
-sAMAccountName: <%= @newuserldap.sAMAccountName %>
-<BR>
-name: <%= @newuserldap.name %>
-<BR>
-displayname: <%= @newuserldap.displayname %>
-<BR>
-objectclass: <%= @newuserldap.objectclass %>
-<BR>
-givenname: <%= @newuserldap.givenname %>
-<BR>
-sn: <%= @newuserldap.sn %>
-<BR>
-telephoneNumber: <%= @newuserldap.telephoneNumber %>
-<BR>
-facsimileTelephoneNumber: <%= @newuserldap.facsimileTelephoneNumber %>
-<BR>
-homePhone: <%= @newuserldap.homePhone %>
-<BR>
-ipPhone: <%= @newuserldap.ipPhone %>
-<BR>
-mobile: <%= @newuserldap.mobile %>
-<BR>
-l: <%= @newuserldap.l %>
-<BR>
-st: <%= @newuserldap.st %>
-<BR>
-title: <%= @newuserldap.title %>
-<BR>
-description: <%= @newuserldap.description %>
-<BR>
-c: <%= @newuserldap.c %>
-<BR>
-department: <%= @newuserldap.department %>
-<BR>
-company: <%= @newuserldap.company %>
-<BR>
-streetAddress: <%= @newuserldap.streetAddress %>
-<BR>
-postalCode: <%= @newuserldap.postalCode %>
-<BR>
-postOfficeBox: <%= @newuserldap.postOfficeBox %>
-<BR>
-manager: <%= @newuserldap.manager %>
-<BR>
-proxyAddresses: <%= @newuserldap.proxyAddresses %>
-<BR>
-wWWHomePage: <%= @newuserldap.wWWHomePage %>
-<BR>
-userPassword: <%= @newuserldap.userPassword %>
-<BR><BR><BR><BR>
+<h4>Listing LDAP Attributes</h4>
+
+<table class="table table-striped">
+  <tbody>
+<tr><td><strong>dn:</strong> <%= @newuserldap.dn %></td></tr>
+<tr><td><strong>cn:</strong> <%= @newuserldap.cn %></td></tr>
+<tr><td><strong>userPrincipalName:</strong> <%= @newuserldap.userPrincipalName %></td></tr>
+<tr><td><strong>E-mail:</strong> <%= @newuserldap.mail %></td></tr>
+<tr><td><strong>sAMAccountName:</strong> <%= @newuserldap.sAMAccountName %></td></tr>
+<tr><td><strong>name:</strong> <%= @newuserldap.name %></td></tr>
+<tr><td><strong>displayname:</strong> <%= @newuserldap.displayname %></td></tr>
+<tr><td><strong>objectclass:</strong> <%= @newuserldap.objectclass %></td></tr>
+<tr><td><strong>givenname:</strong> <%= @newuserldap.givenname %></td></tr>
+<tr><td><strong>sn:</strong> <%= @newuserldap.sn %></td></tr>
+<tr><td><strong>telephoneNumber:</strong> <%= @newuserldap.telephoneNumber %></td></tr>
+<tr><td><strong>facsimileTelephoneNumber:</strong> <%= @newuserldap.facsimileTelephoneNumber %></td></tr>
+<tr><td><strong>homePhone:</strong> <%= @newuserldap.homePhone %></td></tr>
+<tr><td><strong>ipPhone:</strong> <%= @newuserldap.ipPhone %></td></tr>
+<tr><td><strong>mobile:</strong> <%= @newuserldap.mobile %></td></tr>
+<tr><td><strong>l:</strong> <%= @newuserldap.l %></td></tr>
+<tr><td><strong>st:</strong> <%= @newuserldap.st %></td></tr>
+<tr><td><strong>title:</strong> <%= @newuserldap.title %></td></tr>
+<tr><td><strong>description:</strong> <%= @newuserldap.description %></td></tr>
+<tr><td><strong>c:</strong> <%= @newuserldap.c %></td></tr>
+<tr><td><strong>department:</strong> <%= @newuserldap.department %></td></tr>
+<tr><td><strong>company:</strong> <%= @newuserldap.company %></td></tr>
+<tr><td><strong>streetAddress:</strong> <%= @newuserldap.streetAddress %></td></tr>
+<tr><td><strong>postalCode:</strong> <%= @newuserldap.postalCode %></td></tr>
+<tr><td><strong>postOfficeBox:</strong> <%= @newuserldap.postOfficeBox %></td></tr>
+<tr><td><strong>manager:</strong> <%= @newuserldap.manager %></td></tr>
+<tr><td><strong>proxyAddresses:</strong> <%= @newuserldap.proxyAddresses %></td></tr>
+<tr><td><strong>wWWHomePage:</strong> <%= @newuserldap.wWWHomePage %></td></tr>
+<tr><td><strong>userPassword:</strong> <%= @newuserldap.userPassword %></td></tr>
+<tr><td></td></tr>
+<tr><td><%= link_to 'Add user to LDAP', {:controller => :ldap, :action => :build, :id => @newuser.id}, class: "btn btn-primary" %></td></tr>
+  </tbody>
+</table>

@@ -1,14 +1,17 @@
 <p id="notice"><%= notice %></p>
+<br>
+<br>
+<div class="container">
+  <h3>Approvers & Administrators</h3>
+  <br>
 
-<h1>Listing Grants</h1>
-
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Username</th>
-      <th>Manager</th>
+      <th>Approver</th>
       <th>Admin</th>
-      <th colspan="3"></th>
+      <th colspan="3">Actions</th>
     </tr>
   </thead>
 
@@ -16,11 +19,23 @@
     <% @grants.each do |grant| %>
       <tr>
         <td><%= grant.username %></td>
-        <td><%= grant.manager %></td>
-        <td><%= grant.admin %></td>
-        <td><%= link_to 'Show', grant %></td>
-        <td><%= link_to 'Edit', edit_grant_path(grant) %></td>
-        <td><%= link_to 'Destroy', grant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <% if grant.manager == true %>
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+          <% else %>
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+          <% end %>
+        </td>
+        <td>
+          <% if grant.admin == true %>
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+          <% else %>
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', grant, class: "btn btn-primary" %></td>
+        <td><%= link_to 'Edit', edit_grant_path(grant), class: "btn btn-warning" %></td>
+        <td><%= link_to 'Destroy', grant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,3 +44,5 @@
 <br>
 
 <%= link_to 'New Grant', new_grant_path %>
+
+</div>

@@ -12,24 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :firstname %><br>
-    <%= f.text_field :firstname %>
+    <%= f.label "First Name" %><br>
+    <%= f.text_field :firstname, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :lastname %><br>
-    <%= f.text_field :lastname %>
+    <%= f.label "Last Name" %><br>
+    <%= f.text_field :lastname, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
+    <%= f.label "Username (suggestion)" %><br>
+    <%= f.text_field :username, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :company_id %><br>
@@ -41,65 +41,58 @@
   </div>
   <div class="field">
     <%= f.label :department %><br>
-    <%= f.text_field :department %>
+    <%= f.text_field :department, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :grant_id %><br>
+    <%= f.label "Manager" %><br>
     <%= collection_select(:newuser, :grant_id, @grants, :id, :username, {:prompt => false}, class: "form-control") %>
   </div>
   <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
+    <%= f.label "Phone" %><br>
+    <%= f.text_field :phone, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :mobile %><br>
-    <%= f.text_field :mobile %>
+    <%= f.label "Mobile Phone" %><br>
+    <%= f.text_field :mobile, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :homephone %><br>
-    <%= f.text_field :homephone %>
+    <%= f.label "Home Phone" %><br>
+    <%= f.text_field :homephone, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :ipphone %><br>
-    <%= f.text_field :ipphone %>
-  </div>
-  <div class="field">
-    <%= f.label :pager %><br>
-    <%= f.text_field :pager %>
-  </div>
-  <div class="field">
-    <%= f.label :Office %><br>
-    <%= f.text_field :Office %>
+    <%= f.label "IP Phone / Ext" %><br>
+    <%= f.text_field :ipphone, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :City %><br>
-    <%= f.text_field :City %>
+    <%= f.text_field :City, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :address %><br>
-    <%= f.text_field :address %>
+    <%= f.text_field :address, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :State %><br>
-    <%= f.text_field :State %>
+    <%= f.text_field :State, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :Country %><br>
-    <%= f.text_field :Country %>
+    <%= f.text_field :Country, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :postalcode %><br>
-    <%= f.text_field :postalcode %>
+    <%= f.text_field :postalcode, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :pobox %><br>
-    <%= f.text_field :pobox %>
+    <%= f.text_field :pobox, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label :website %><br>
-    <%= f.text_field :website %>
+    <%= f.text_field :website, class: "form-control" %>
   </div>
+  <br><br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
