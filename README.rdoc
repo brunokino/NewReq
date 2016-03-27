@@ -38,6 +38,7 @@ http://diagrams.seaquail.net/Diagram.aspx?ID=26795
 Diagram processes:
 In development
 
+If you have any questions to start a contribution, please contact brunokino@gmail.com
 
 == License
 
