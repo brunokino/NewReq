@@ -13,9 +13,8 @@ It is distributed under the GNU AFFERO General Public License (AGPL)
 * LDAP integration:
     
     1 - Loging using LDAP account (working)
-    2 - Create new user in LDAP Server (working)
-    3 - Automated creation of new user in the LDAP Server (working)
-    4 - Customizable LDAP user attributes
+    2 - Automated creation of new user in the LDAP Server (working)
+    3 - Customizable LDAP user attributes (working part)
 
 
 == Contributions:
