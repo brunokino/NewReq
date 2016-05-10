@@ -1,4 +1,14 @@
 class UsersController < ApplicationController
+
+
+######################################################
+##                                                  ##
+## Under development                                ##
+##                                                  ##
+######################################################
+
+
+
   def index
     @users = User.all
   end

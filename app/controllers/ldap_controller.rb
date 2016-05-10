@@ -54,6 +54,12 @@ class LdapController < ApplicationController
     end
     
     
+    #############################################################
+    ## Kinoshita: Function that creates the user entry in LDAP ##
+    ## Next step is to search the settings in the database     ##
+    ## (ldapservers table)                                     ##
+    #############################################################
+    
     def build
       require 'rubygems'
       require 'net/ldap'
@@ -94,7 +100,7 @@ class LdapController < ApplicationController
                   :streetAddress => @newuserldap.streetAddress,
                   :postalCode => @newuserldap.postalCode,
                   :postOfficeBox => @newuserldap.postOfficeBox,
-                  :manager => "cn=Bruno Kinoshita,ou=usuarios,dc=intranet,dc=local",
+                  :manager => "cn=Bruno Kinoshita,ou=usuarios,dc=intranet,dc=local", # You need to add this information in Grants table
                   :proxyAddresses => @newuserldap.proxyAddresses,
                   :wWWHomePage => @newuserldap.wWWHomePage,
                   :userPassword => @newuserldap.userPassword
@@ -113,22 +119,33 @@ class LdapController < ApplicationController
 
 private
 
-    # Loading user by ID on Newuser table
+    #######################################
+    # Loading user by ID on Newuser table #
+    #######################################
+    
     def set_newuser
       @newuser = Newuser.find(params[:id])
     end
 
-    # Loading user by newusers_id on Newuserldap table
+    #####################################################
+    # Loading user by newusers_id on Newuserldap table  #
+    #####################################################
+    
     def set_newuserldap
       @newuserldap = Newuserldap.where(newusers_id: params[:id]).first
     end
 
-
-    # Building attributes from LDAP
+    ########################################################################################
+    ## Kinoshita: Preparing the LDAP attribute variables using the data table "newusers"  ##
+    ## Next step will be to bring the variables "Domain", "Organizational Unit" and       ##
+    ## other information through the database                                             ##
+    ########################################################################################
+    
+    
     def load_attributes
-      @domain = "intranet.local"
-      @pubdomain = "publicdomain.com"
-      @ou = ",ou=usuarios,dc=intranet,dc=local"
+      @domain = "intranet.local"        # You need to bring from database
+      @pubdomain = "publicdomain.com"   # You need to create a registration screen for public domain
+      @ou = ",ou=usuarios,dc=intranet,dc=local" #You need to create a registration screen for Organizational Units
       @cn = @newuser.firstname + " " + @newuser.lastname
       @userPrincipalName = @newuser.username + "@" + @domain
       @mail = @newuser.username + "@" + @pubdomain
@@ -158,7 +175,7 @@ private
       @manager = @newuser.grant_id
       @proxyAddresses = "SMTP:" + @mail
       @wWWHomePage = @newuser.website
-      @userPassword = "Teste@123*"
+      @userPassword = "Teste@123*" # You need to build a random password generator and learn how to put the user in LDAP as "Enabled"
       @newusers_id = @newuser.id
     end
 

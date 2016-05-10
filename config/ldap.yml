@@ -17,6 +17,10 @@ authorizations: &AUTHORIZATIONS
 
 ## Enviornments
 
+#######################################################################################################
+## Kinoshita: manual input - Next step is to search the settings in the database (ldapservers table) ##
+#######################################################################################################
+
 development:
   host: 52.37.141.91
   port: 389

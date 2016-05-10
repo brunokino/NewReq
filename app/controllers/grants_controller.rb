@@ -1,6 +1,16 @@
 class GrantsController < ApplicationController
   before_action :set_grant, only: [:show, :edit, :update, :destroy]
 
+
+######################################################################################
+##                                                                                  ##
+## Pending tasks:                                                                   ##
+## 1 - Build a screen to find information in the LDAP database instead of typing    ##
+## 2 - Add a field with information based on the attribute "distinguishedName" LDAP ##
+######################################################################################
+
+
+
   # GET /grants
   # GET /grants.json
   def index

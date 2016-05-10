@@ -1,6 +1,21 @@
 class NewusersController < ApplicationController
   before_action :set_newuser, only: [:show, :edit, :update, :destroy]
 
+
+##############################################################################################
+##                                                                                          ##
+## Pending tasks:                                                                           ##
+## 1 - Do subfilter field "Site" after selecting the "Company"                              ##
+## 2 - Build field to choose the public domain for e-mail (from the public domain records)  ##
+## 3 - Set mandatory fields                                                                 ##
+## 4 - Put pre-defined values in the country, with identical values to from LDAP Server     ##
+##############################################################################################
+
+
+
+
+
+
   # GET /newusers
   # GET /newusers.json
   def index
