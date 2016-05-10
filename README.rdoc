@@ -4,21 +4,20 @@ NewReq is a simple open source tool for managing IT user access requests. (Still
 It is distributed under the GNU AFFERO General Public License (AGPL)
 
 
-Key Features:
+== Key Features:
 
 * Self Service access request (working part)
 
 * Approval workflow (not developed)
 
 * LDAP integration:
+    
+    1 - Loging using LDAP account (working)
+    2 - Automated creation of new user in the LDAP Server (working)
+    3 - Customizable LDAP user attributes (working part)
 
-1 - Loging using LDAP account (working)
-2 - Create new user in LDAP Server (working)
-3 - Automated creation of new user in the LDAP Server (working)
-4 - Customizable LDAP user attributes
 
-
-== Contributions
+== Contributions:
 
 We are looking for contributions for the project:
 
@@ -26,7 +25,6 @@ We are looking for contributions for the project:
 * Frontend development
 * Ideas and concepts
 * Management of distributed teams
-
 
 Project planning:
 https://www.pivotaltracker.com/projects/1536033
@@ -37,15 +35,12 @@ https://github.com/NewReq/NewReq
 Database Schema:
 http://diagrams.seaquail.net/Diagram.aspx?ID=26795
 
-
 Diagram processes:
 In development
 
+If you have any questions to start a contribution, please contact brunokino@gmail.com
 
 == License
 
 It is distributed under the AFFERO GNU General Public License - see the
 accompanying [COPYING](COPYING) file for more details.
-
-
-
