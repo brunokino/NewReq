@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Domain:</strong>
+  <%= @ldapserver.domain %>
+</p>
+
+<p>
+  <strong>Host:</strong>
+  <%= @ldapserver.host %>
+</p>
+
+<p>
+  <strong>Port:</strong>
+  <%= @ldapserver.port %>
+</p>
+
+<p>
+  <strong>Attribute:</strong>
+  <%= @ldapserver.attributename %>
+</p>
+
+<p>
+  <strong>Base:</strong>
+  <%= @ldapserver.base %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @ldapserver.username %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @ldapserver.password %>
+</p>
+
+<p>
+  <strong>Method:</strong>
+  <%= @ldapserver.method %>
+</p>
+
+<%= link_to 'Edit', edit_ldapserver_path(@ldapserver), class: "btn btn-warning" %> |
+<%= link_to 'Back', ldapservers_path, class: "btn btn-default" %>

@@ -22,7 +22,8 @@
         <td><%= newuserldap.sAMAccountName %></td>
         <td><%= newuserldap.cn %></td>
         <td><%= newuserldap.userPrincipalName %></td>
-        <td><%= link_to 'Show', action: "show", id: newuserldap.newusers_id %></td>
+        <td><%= link_to 'Show', {action: "show", id: newuserldap.newusers_id}, class: "btn btn-primary" %></td>
+        <td><%= link_to 'Destroy', {action: "destroy", id: newuserldap.newusers_id}, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
         <td></td>
       </tr>
     <% end %>

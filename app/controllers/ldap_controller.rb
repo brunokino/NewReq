@@ -1,6 +1,6 @@
 class LdapController < ApplicationController
     before_action :set_newuser, only: [:show, :create]
-    before_action :set_newuserldap, only: [:show, :build]
+    before_action :set_newuserldap, only: [:show, :build, :destroy]
     before_action :load_attributes, only: [:create]
     
     def index
@@ -105,11 +105,8 @@ class LdapController < ApplicationController
 
 
     def destroy
-      @site.destroy
-      respond_to do |format|
-        format.html { redirect_to sites_url, notice: 'Site was successfully destroyed.' }
-        format.json { head :no_content }
-      end
+      @newuserldap.destroy
+      redirect_to ldap_index_path, notice: 'Attributes was successfully destroyed.'
     end
 
 

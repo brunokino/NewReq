@@ -17,8 +17,7 @@ class ApplicationController < ActionController::Base
   devise_parameter_sanitizer.for(:sign_in) << :username
   end
   
-  
-  
+
   
   
 end

@@ -1,0 +1,50 @@
+<%= form_for(@ldapserver) do |f| %>
+  <% if @ldapserver.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ldapserver.errors.count, "error") %> prohibited this ldapserver from being saved:</h2>
+
+      <ul>
+      <% @ldapserver.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :domain %><br>
+    <%= f.text_field :domain, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :host %><br>
+    <%= f.text_field :host, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :port %><br>
+    <%= f.text_field :port, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :attributename %><br>
+    <%= f.text_field :attributename, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :base %><br>
+    <%= f.text_field :base, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :username %><br>
+    <%= f.text_field :username, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.text_field :password, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :method %><br>
+    <%= f.text_field :method, class: "form-control" %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

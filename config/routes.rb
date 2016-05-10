@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
 
+  
   root 'static_pages#home'
 
   get 'ldap/build/:id' => 'ldap#build'
   get 'ldap/create/:id' => 'ldap#create'
+  get 'ldap/delete/:id' => 'ldap#destroy'
   get 'users/index'
   get 'users/show' => 'users#show'
+  get 'settings' => 'static_pages#settings'
   
+  resources :ldapservers
   resources :ldap
   resources :newusers
   resources :grants
