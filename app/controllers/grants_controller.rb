@@ -119,6 +119,6 @@ class GrantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def grant_params
-      params.require(:grant).permit(:username, :cn, :manager, :admin)
+      params.require(:grant).permit(:username, :name, :cn, :manager, :admin)
     end
 end
