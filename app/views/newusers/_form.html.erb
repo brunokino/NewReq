@@ -19,6 +19,10 @@
 
 
   <div class="field">
+    <%= f.label "Manager" %><br>
+    <%= collection_select(:newuser, :grant_id, @grants, :id, :cn, {:prompt => false}, class: "form-control") %>
+  </div>
+  <div class="field">
     <%= f.label "First Name" %><br>
     <%= f.text_field :firstname, class: "form-control" %>
   </div>
@@ -35,28 +39,12 @@
     <%= f.text_field :title, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description, class: "form-control" %>
-  </div>
-  <div class="field">
-    <%= f.label :company_id %><br>
-    <%= collection_select(:newuser, :company_id, @companies, :id, :name, {:prompt => false}, class: "form-control") %>
-  </div>
-  <div class="field">
-    <%= f.label :site_id %><br>
-    <%= collection_select(:newuser, :site_id, @sites, :id, :name, {:prompt => false}, class: "form-control") %>
-  </div>
-  <div class="field">
     <%= f.label :department %><br>
     <%= f.text_field :department, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label "Manager" %><br>
-    <%= collection_select(:newuser, :grant_id, @grants, :id, :cn, {:prompt => false}, class: "form-control") %>
-  </div>
-  <div class="field">
-    <%= f.label "Phone" %><br>
-    <%= f.text_field :phone, class: "form-control" %>
+    <%= f.label :description %><br>
+    <%= f.text_field :description, class: "form-control" %>
   </div>
   <div class="field">
     <%= f.label "Mobile Phone" %><br>
@@ -70,9 +58,33 @@
     <%= f.label "IP Phone / Ext" %><br>
     <%= f.text_field :ipphone, class: "form-control" %>
   </div>
+  
+  </div>
+  </div>
+  
+  <BR>
+  
+  <div class="panel panel-default">
+  <div class="panel-heading">Company informations</div>
+  <div class="panel-body">
+  
+  
+  <div class="field">
+    <%= f.label :company_id %><br>
+    <%= collection_select(:newuser, :company_id, @companies, :id, :name, {:prompt => false}, class: "form-control") %>
+  </div>
+  <div class="field">
+    <%= f.label :site_id %><br>
+    <%= collection_select(:newuser, :site_id, @sites, :id, :name, {:prompt => false}, class: "form-control") %>
+  </div>
+  
+  <div class="field">
+    <%= f.label "Phone" %><br>
+    <%= f.text_field :phone, class: "form-control" %>
+  </div>
   <div class="field">
     <%= f.label :City %><br>
-    <%= f.text_field :City, class: "form-control" %>
+    <%= collection_select(:newuser, :City, @sites, :id, :city, {:prompt => false}, class: "form-control") %>
   </div>
   <div class="field">
     <%= f.label :address %><br>
@@ -80,11 +92,11 @@
   </div>
   <div class="field">
     <%= f.label :State %><br>
-    <%= f.text_field :State, class: "form-control" %>
+    <%= collection_select(:newuser, :State, @sites, :id, :state, {:prompt => false}, class: "form-control") %>
   </div>
   <div class="field">
     <%= f.label :Country %><br>
-    <%= f.text_field :Country, class: "form-control" %>
+    <%= collection_select(:newuser, :Country, @sites, :id, :country, {:prompt => false}, class: "form-control") %>
   </div>
   <div class="field">
     <%= f.label :postalcode %><br>
@@ -98,7 +110,11 @@
     <%= f.label :website %><br>
     <%= f.text_field :website, class: "form-control" %>
   </div>
-  <br><br>
+  
+  </div>
+  </div>
+  
+  <br>
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
   </div>

@@ -162,11 +162,11 @@ private
       @ipPhone = @newuser.ipphone
       @mobile = @newuser.mobile
       @physicalDeliveryOfficeName = @newuser.site.name
-      @l = @newuser.City
-      @st = @newuser.State
+      @l = @newuser.site.city
+      @st = @newuser.site.state
       @title = @newuser.title
       @description = @newuser.description
-      @c = @newuser.Country
+      @c = @newuser.site.country
       @department = @newuser.department
       @company = @newuser.company.name
       @streetAddress = @newuser.address

@@ -26,23 +26,8 @@
 </p>
 
 <p>
-  <strong>Company:</strong>
-  <%= @newuser.company_id %>
-</p>
-
-<p>
-  <strong>Site:</strong>
-  <%= @newuser.site_id %>
-</p>
-
-<p>
   <strong>Department:</strong>
   <%= @newuser.department %>
-</p>
-
-<p>
-  <strong>Grant:</strong>
-  <%= @newuser.grant_id %>
 </p>
 
 <p>
@@ -70,6 +55,24 @@
   <%= @newuser.pager %>
 </p>
 
+
+<p>
+  <strong>Grant:</strong>
+  <%= @newuser.grant.username %>
+</p>
+
+
+<p>
+  <strong>Company:</strong>
+  <%= @newuser.company.name %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @newuser.site.name %>
+</p>
+
+
 <p>
   <strong>Office:</strong>
   <%= @newuser.Office %>
@@ -77,7 +80,7 @@
 
 <p>
   <strong>City:</strong>
-  <%= @newuser.City %>
+  <%= @newuser.site.city %>
 </p>
 
 <p>
@@ -87,12 +90,12 @@
 
 <p>
   <strong>State:</strong>
-  <%= @newuser.State %>
+  <%= @newuser.site.state %>
 </p>
 
 <p>
   <strong>Country:</strong>
-  <%= @newuser.Country %>
+  <%= @newuser.site.country %>
 </p>
 
 <p>
