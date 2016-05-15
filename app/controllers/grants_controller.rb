@@ -25,10 +25,45 @@ class GrantsController < ApplicationController
   # GET /grants/new
   def new
     @grant = Grant.new
+    
+    require 'rubygems'
+    require 'net/ldap'
+
+    @ldap = Net::LDAP.new  :host => "52.37.141.91",
+                          :port => 389,
+                          :auth => {
+                                    :method => :simple,
+                                    :username => "cn=svc-ldap,ou=usuarios,dc=intranet,dc=local",
+                                    :password => "NewReq@123"
+                                    }
+    @filter = Net::LDAP::Filter.eq( "sAMAccountName", "*" )
+    @treebase = "ou=usuarios,dc=intranet,dc=local"
+    
   end
 
   # GET /grants/1/edit
   def edit
+    
+    ########################################################
+    ## Kinoshita: Repetindo temporariamente o código aqui ##
+    ## enocntrar forma de fazer público                   ##
+    ########################################################
+    
+    require 'rubygems'
+    require 'net/ldap'
+
+    @ldap = Net::LDAP.new  :host => "52.37.141.91",
+                          :port => 389,
+                          :auth => {
+                                    :method => :simple,
+                                    :username => "cn=svc-ldap,ou=usuarios,dc=intranet,dc=local",
+                                    :password => "NewReq@123"
+                                    }
+    
+    @filter = Net::LDAP::Filter.eq( "sAMAccountName", "*" )
+    @treebase = "ou=usuarios,dc=intranet,dc=local"
+    
+    
   end
 
   # POST /grants
@@ -70,6 +105,11 @@ class GrantsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
+  
+  
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -79,6 +119,6 @@ class GrantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def grant_params
-      params.require(:grant).permit(:username, :manager, :admin)
+      params.require(:grant).permit(:username, :cn, :manager, :admin)
     end
 end

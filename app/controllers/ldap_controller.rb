@@ -100,7 +100,7 @@ class LdapController < ApplicationController
                   :streetAddress => @newuserldap.streetAddress,
                   :postalCode => @newuserldap.postalCode,
                   :postOfficeBox => @newuserldap.postOfficeBox,
-                  :manager => "cn=Bruno Kinoshita,ou=usuarios,dc=intranet,dc=local", # You need to add this information in Grants table
+                  :manager => @newuserldap.manager,
                   :proxyAddresses => @newuserldap.proxyAddresses,
                   :wWWHomePage => @newuserldap.wWWHomePage,
                   :userPassword => @newuserldap.userPassword
@@ -135,11 +135,11 @@ private
       @newuserldap = Newuserldap.where(newusers_id: params[:id]).first
     end
 
-    ########################################################################################
-    ## Kinoshita: Preparing the LDAP attribute variables using the data table "newusers"  ##
-    ## Next step will be to bring the variables "Domain", "Organizational Unit" and       ##
-    ## other information through the database                                             ##
-    ########################################################################################
+    ###############################################################################################
+    ## Kinoshita: Preparing the LDAP attribute variables using the data table "newusers"         ##
+    ## Next step will be to bring the variables "Domain", "Public Domain", "Organizational Unit" ##
+    ## and other information through the database                                                ##
+    ###############################################################################################
     
     
     def load_attributes
@@ -172,7 +172,7 @@ private
       @streetAddress = @newuser.address
       @postalCode = @newuser.postalcode
       @postOfficeBox = @newuser.pobox
-      @manager = @newuser.grant_id
+      @manager = @newuser.grant.cn
       @proxyAddresses = "SMTP:" + @mail
       @wWWHomePage = @newuser.website
       @userPassword = "Teste@123*" # You need to build a random password generator and learn how to put the user in LDAP as "Enabled"

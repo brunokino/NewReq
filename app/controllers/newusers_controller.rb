@@ -9,9 +9,8 @@ class NewusersController < ApplicationController
 ## 2 - Build field to choose the public domain for e-mail (from the public domain records)  ##
 ## 3 - Set mandatory fields                                                                 ##
 ## 4 - Put pre-defined values in the country, with identical values to from LDAP Server     ##
+## 5 - Build setup screen to enable and disable the form fields                             ##
 ##############################################################################################
-
-
 
 
 

@@ -52,7 +52,7 @@
   </div>
   <div class="field">
     <%= f.label "Manager" %><br>
-    <%= collection_select(:newuser, :grant_id, @grants, :id, :username, {:prompt => false}, class: "form-control") %>
+    <%= collection_select(:newuser, :grant_id, @grants, :id, :cn, {:prompt => false}, class: "form-control") %>
   </div>
   <div class="field">
     <%= f.label "Phone" %><br>

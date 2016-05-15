@@ -9,20 +9,12 @@ ldap = Net::LDAP.new :host => "52.37.141.91",
            :password => "NewReq@123"
      }
 
-filter = Net::LDAP::Filter.eq( "sAMAccountName", "*" )
 treebase = "ou=usuarios,dc=intranet,dc=local"
 
-ldap.search( :base => treebase, :filter => filter ) do |entry|
-  puts "DN: #{entry.dn}"
-  entry.each do |attribute, values|
-     puts "   #{attribute}:"
-     values.each do |value|
-       puts "      --->#{value}"
-     end
-   end
+ldap.search( :base => treebase) do |entry|
+    puts "DN: #{entry.dn}"
 end
 
-# p ldap.get_operation_result
 
 if ldap.bind
  print "It works\n"
