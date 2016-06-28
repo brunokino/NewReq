@@ -5,7 +5,7 @@ It will automate the process of new user request and creation in Active Director
 It is distributed under the GNU AFFERO General Public License (AGPL)
 
 
-== Some problems in the company that will solve NewReq:
+== Some problems in the company that can be solved by NewReq:
 
 * Registration of an access request with the necessary information
 
