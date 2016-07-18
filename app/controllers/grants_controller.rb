@@ -9,62 +9,39 @@ class GrantsController < ApplicationController
 ## 2 - Add a field with information based on the attribute "distinguishedName" LDAP ##
 ######################################################################################
 
-
-
   # GET /grants
   # GET /grants.json
   def index
     @grants = Grant.all
   end
 
+
+
   # GET /grants/1
   # GET /grants/1.json
   def show
   end
 
+
+
+
   # GET /grants/new
   def new
     @grant = Grant.new
-    
-    require 'rubygems'
-    require 'net/ldap'
-
-    @ldap = Net::LDAP.new  :host => "52.37.141.91",
-                          :port => 389,
-                          :auth => {
-                                    :method => :simple,
-                                    :username => "cn=svc-ldap,ou=usuarios,dc=intranet,dc=local",
-                                    :password => "NewReq@123"
-                                    }
-    @filter = Net::LDAP::Filter.eq( "sAMAccountName", "*" )
-    @treebase = "ou=usuarios,dc=intranet,dc=local"
-    
+    connect_ldap
+    ldap_all_users
   end
+
+
+
 
   # GET /grants/1/edit
   def edit
-    
-    ########################################################
-    ## Kinoshita: Repetindo temporariamente o código aqui ##
-    ## enocntrar forma de fazer público                   ##
-    ########################################################
-    
-    require 'rubygems'
-    require 'net/ldap'
-
-    @ldap = Net::LDAP.new  :host => "52.37.141.91",
-                          :port => 389,
-                          :auth => {
-                                    :method => :simple,
-                                    :username => "cn=svc-ldap,ou=usuarios,dc=intranet,dc=local",
-                                    :password => "NewReq@123"
-                                    }
-    
-    @filter = Net::LDAP::Filter.eq( "sAMAccountName", "*" )
-    @treebase = "ou=usuarios,dc=intranet,dc=local"
-    
-    
+    connect_ldap
+    ldap_all_users
   end
+
+
 
   # POST /grants
   # POST /grants.json
@@ -82,6 +59,9 @@ class GrantsController < ApplicationController
     end
   end
 
+
+
+
   # PATCH/PUT /grants/1
   # PATCH/PUT /grants/1.json
   def update
@@ -95,6 +75,10 @@ class GrantsController < ApplicationController
       end
     end
   end
+
+
+
+
 
   # DELETE /grants/1
   # DELETE /grants/1.json

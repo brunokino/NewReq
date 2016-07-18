@@ -15,9 +15,6 @@ class ApplicationController < ActionController::Base
 ###########################################################################################
 
 
-  
-  
-  
   ##################################################################
   ## Kinoshita: Enabling Device LDAP. Next step is to create a    ##
   ## mixed authentication, Local and LDAP to authenticate as an   ##
@@ -36,6 +33,30 @@ class ApplicationController < ActionController::Base
   end
   
 
+  def connect_ldap
+    require 'rubygems'
+    require 'net/ldap'
 
+    @ldap = Net::LDAP.new  :host => "52.42.36.221",
+                          :port => 389,
+                          :auth => {
+                                    :method => :simple,
+                                    :username => "cn=svc-ldap,ou=usuarios,dc=intranet,dc=local",
+                                    :password => "NewReq@123"
+                                    }
+  end
+  
+  
+  def ldap_all_users
+    @filter = Net::LDAP::Filter.eq( "sAMAccountName", "*" )
+    @treebase = "ou=usuarios,dc=intranet,dc=local"
+  end
+  
+  
+  def ldap_my_user
+    @filter = Net::LDAP::Filter.eq( "sAMAccountName", current_user.username )
+    @treebase = "dc=intranet,dc=local"  
+  
+  end
   
 end

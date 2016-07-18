@@ -15,21 +15,10 @@ class UsersController < ApplicationController
 
   def show
   
-    require 'rubygems'
-    require 'net/ldap'
-
-    ldap = Net::LDAP.new  :host => "130.211.138.238",
-                          :port => 389,
-                          :auth =>  {
-                                    :method => :simple,
-                                    :username => "cn=svc-ldap,ou=usuarios,dc=intranet,dc=local",
-                                    :password => "NewReq@123"
-                                    }
-
-    filter = Net::LDAP::Filter.eq( "sAMAccountName", current_user.username )
-    treebase = "dc=intranet,dc=local"
-
-    ldap.search( :base => treebase, :filter => filter ) do |entry|
+    connect_ldap
+    ldap_my_user    
+    
+    @ldap.search( :base => @treebase, :filter => @filter ) do |entry|
       @dn = "#{entry.dn}"
       puts "DN: #{entry.dn}"
       entry.each do |attribute, values|

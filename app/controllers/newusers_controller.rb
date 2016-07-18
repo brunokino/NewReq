@@ -56,8 +56,8 @@ class NewusersController < ApplicationController
   # POST /newusers
   # POST /newusers.json
   def create
-    @newuser = Newuser.new(newuser_params)
-
+    @newuser = Newuser.new(newuser_params, status => "Waiting for approval")
+    
     respond_to do |format|
       if @newuser.save
         format.html { redirect_to @newuser, notice: 'Newuser was successfully created.' }

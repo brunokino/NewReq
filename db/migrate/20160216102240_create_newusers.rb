@@ -23,6 +23,7 @@ class CreateNewusers < ActiveRecord::Migration
       t.string :postalcode
       t.string :pobox
       t.string :website
+      t.string :status
 
       t.timestamps null: false
     end

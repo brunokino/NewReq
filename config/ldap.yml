@@ -22,7 +22,7 @@ authorizations: &AUTHORIZATIONS
 #######################################################################################################
 
 development:
-  host: 52.37.141.91
+  host: 52.42.36.221
   port: 389
   attribute: sAMAccountName
   base: "ou=usuarios,dc=intranet,dc=local"

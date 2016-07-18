@@ -61,17 +61,7 @@ class LdapController < ApplicationController
     #############################################################
     
     def build
-      require 'rubygems'
-      require 'net/ldap'
-
-      ldap = Net::LDAP.new :host => "52.37.141.91",
-                           :port => 389,
-                           :auth => {
-                                    :method => :simple,
-                                    :username => "cn=svc-ldap,ou=usuarios,dc=intranet,dc=local",
-                                    :password => "NewReq@123"
-                                    }
-     
+      connect_ldap
 
       dn = @newuserldap.dn
                 attr = {
@@ -106,7 +96,7 @@ class LdapController < ApplicationController
                   :userPassword => @newuserldap.userPassword
                 }.reject { |key,value| value.empty? }
                 
-      ldap.add(:dn => dn, :attributes => attr)
+      @ldap.add(:dn => dn, :attributes => attr)
     end
 
 
