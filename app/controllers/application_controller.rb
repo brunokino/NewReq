@@ -33,12 +33,13 @@ class ApplicationController < ActionController::Base
   end
   
 
-  def connect_ldap
+  def connect_ldap(id = nil)
+    @ldapserver = Ldapserver.find(id)
     require 'rubygems'
     require 'net/ldap'
 
-    @ldap = Net::LDAP.new  :host => "52.42.36.221",
-                          :port => 389,
+    @ldap = Net::LDAP.new  :host => @ldapserver.host,
+                          :port => @ldapserver.port,
                           :auth => {
                                     :method => :simple,
                                     :username => "cn=svc-ldap,ou=usuarios,dc=intranet,dc=local",

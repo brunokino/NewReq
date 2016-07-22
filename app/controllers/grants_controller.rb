@@ -28,7 +28,7 @@ class GrantsController < ApplicationController
   # GET /grants/new
   def new
     @grant = Grant.new
-    connect_ldap
+    connect_ldap(1)
     ldap_all_users
   end
 
@@ -37,7 +37,7 @@ class GrantsController < ApplicationController
 
   # GET /grants/1/edit
   def edit
-    connect_ldap
+    connect_ldap(1)
     ldap_all_users
   end
 

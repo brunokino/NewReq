@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
   def show
   
-    connect_ldap
+    connect_ldap(1)
     ldap_my_user    
     
     @ldap.search( :base => @treebase, :filter => @filter ) do |entry|

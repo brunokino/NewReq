@@ -1,5 +1,5 @@
 class LdapController < ApplicationController
-    before_action :set_newuser, only: [:show, :create, :overwrite]
+    before_action :set_newuser, only: [:show, :create, :overwrite, :build]
     before_action :set_newuserldap, only: [:show, :build, :destroy, :overwrite]
     before_action :load_attributes, only: [:create]
     
@@ -54,14 +54,9 @@ class LdapController < ApplicationController
     end
     
     
-    #############################################################
-    ## Kinoshita: Function that creates the user entry in LDAP ##
-    ## Next step is to search the settings in the database     ##
-    ## (ldapservers table)                                     ##
-    #############################################################
-    
+
     def build
-      connect_ldap
+      connect_ldap(@ldapserver.id)
 
       dn = @newuserldap.dn
                 attr = {
@@ -122,6 +117,8 @@ private
     
     def set_newuser
       @newuser = Newuser.find(params[:id])
+      @publicdomain = Publicdomain.find(@newuser.publicdomain_id)
+      @ldapserver = Ldapserver.find(@newuser.ldapserver_id)
     end
 
     #####################################################
@@ -140,8 +137,10 @@ private
     
     
     def load_attributes
-      @domain = "intranet.local"        # You need to bring from database
-      @pubdomain = "publicdomain.com"   # You need to create a registration screen for public domain
+      
+      
+      @domain = @ldapserver.domain        # You need to bring from database
+      @pubdomain = @publicdomain.domain   # You need to create a registration screen for public domain
       @ou = ",ou=usuarios,dc=intranet,dc=local" #You need to create a registration screen for Organizational Units
       @cn = @newuser.firstname + " " + @newuser.lastname
       @userPrincipalName = @newuser.username + "@" + @domain
