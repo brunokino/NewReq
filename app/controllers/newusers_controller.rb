@@ -19,6 +19,7 @@ class NewusersController < ApplicationController
   # GET /newusers.json
   def index
     @newusers = Newuser.all
+    @newuserldap = Newuserldap.all
   end
 
   # GET /newusers/1

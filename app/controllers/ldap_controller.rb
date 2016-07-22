@@ -1,6 +1,6 @@
 class LdapController < ApplicationController
-    before_action :set_newuser, only: [:show, :create]
-    before_action :set_newuserldap, only: [:show, :build, :destroy]
+    before_action :set_newuser, only: [:show, :create, :overwrite]
+    before_action :set_newuserldap, only: [:show, :build, :destroy, :overwrite]
     before_action :load_attributes, only: [:create]
     
     def index
@@ -97,6 +97,13 @@ class LdapController < ApplicationController
                 }.reject { |key,value| value.empty? }
                 
       @ldap.add(:dn => dn, :attributes => attr)
+    end
+
+
+
+    def overwrite
+      @newuserldap.destroy
+      redirect_to newusers_path
     end
 
 

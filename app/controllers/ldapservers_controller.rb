@@ -50,7 +50,8 @@ class LdapserversController < ApplicationController
       end
     end
   end
-
+  
+  
   # DELETE /ldapservers/1
   # DELETE /ldapservers/1.json
   def destroy

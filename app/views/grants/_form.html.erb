@@ -14,15 +14,38 @@
   <div class="field">
     <%= f.label :username %><br>
     <%= f.text_field :username %>
+
+  <select name="username">
+    <%  @ldap.search( :base => @treebase, :filter => @filter ) do |entry| %>
+      <option value="<%= entry.sAMAccountName %>"><%= entry.sAMAccountName %></option>
+    <% end %>
+  </select>
+
   </div>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+  
+  <select name="name">
+    <%  @ldap.search( :base => @treebase, :filter => @filter ) do |entry| %>
+      <option value="<%= entry.displayName %>"><%= entry.displayName %></option>
+    <% end %>
+  </select>
+  
+  
   <div class="field">
     <%= f.label :cn %><br>
     <%= f.text_field :cn %>
   </div>
+  
+  <select name="cn">
+    <%  @ldap.search( :base => @treebase, :filter => @filter ) do |entry| %>
+      <option value="<%= entry.dn %>"><%= entry.dn %></option>
+    <% end %>
+  </select>
+  
+  
   <div class="field">
     <%= f.label :manager %><br>
     <%= f.check_box :manager %>

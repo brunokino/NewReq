@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'ldap/build/:id' => 'ldap#build'
   get 'ldap/create/:id' => 'ldap#create'
   get 'ldap/delete/:id' => 'ldap#destroy'
+  get 'ldap/overwrite/:id' => 'ldap#overwrite'
   get 'users/index'
   get 'users/show' => 'users#show'
   get 'settings' => 'static_pages#settings'

@@ -28,10 +28,18 @@
         <td><%= newuser.site.name %></td>
         <td><%= newuser.department %></td>
         <td><%= newuser.grant.username %></td>
-        <td><%= link_to 'Add to LDAP', {:controller => :ldap, :action => :create, :id => newuser.id}, class: "btn btn-default" %></td>
-        <td><%= link_to 'Show', newuser, class: "btn btn-primary" %></td>
-        <td><%= link_to 'Edit', edit_newuser_path(newuser), class: "btn btn-warning" %></td>
-        <td><%= link_to 'Destroy', newuser, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        
+        <% if Newuserldap.where(newusers_id: newuser.id).present? %>
+        <td><%= link_to 'Review LDAP attributes', {:controller => :ldap, :action => :create, :id => newuser.id}, class: "btn btn-warning" %><BR><BR>
+        <%= link_to 'Overwrite LDAP attributes', {:controller => :ldap, :action => :overwrite, :id => newuser.id}, data: { confirm: 'By continuing, you overwrite the attributes that have been set for this user, you sure?' }, class: "btn btn-default" %></td>
+        <% else %>
+        <td><%= link_to 'Create LDAP attributes', {:controller => :ldap, :action => :create, :id => newuser.id}, class: "btn btn-default" %></td>
+        <% end %>
+        
+        
+        <td><%= link_to 'Show user data', newuser, class: "btn btn-primary" %><BR><BR>
+        <%= link_to 'Edit user data', edit_newuser_path(newuser), class: "btn btn-warning" %><BR><BR>
+        <%= link_to 'Delete Request', newuser, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
