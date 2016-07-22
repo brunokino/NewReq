@@ -10,6 +10,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Description</th>
       <th>Domain</th>
       <th>Host</th>
       <th colspan="3">Actions</th>
@@ -19,6 +20,7 @@
   <tbody>
     <% @ldapservers.each do |ldapserver| %>
       <tr>
+        <td><%= ldapserver.description %></td>
         <td><%= ldapserver.domain %></td>
         <td><%= ldapserver.host %></td>
         <td><%= link_to 'Show', ldapserver, class: "btn btn-primary" %></td>

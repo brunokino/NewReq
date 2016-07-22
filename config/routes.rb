@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   
+  resources :publicdomains
   root 'static_pages#home'
 
   get 'ldap/build/:id' => 'ldap#build'

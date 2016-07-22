@@ -16,6 +16,11 @@
 </p>
 
 <p>
+  <strong>Email Domain:</strong>
+  <%= @newuser.publicdomain.domain %>
+</p>
+
+<p>
   <strong>Title:</strong>
   <%= @newuser.title %>
 </p>
@@ -72,6 +77,10 @@
   <%= @newuser.site.name %>
 </p>
 
+<p>
+  <strong>Network Domain:</strong>
+  <%= @newuser.ldapserver.description %>
+</p>
 
 <p>
   <strong>Office:</strong>

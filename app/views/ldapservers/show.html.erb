@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+
+<p>
+  <strong>Description:</strong>
+  <%= @ldapserver.description %>
+</p>
+
 <p>
   <strong>Domain:</strong>
   <%= @ldapserver.domain %>
@@ -16,12 +22,12 @@
 </p>
 
 <p>
-  <strong>Attribute:</strong>
+  <strong>Login Attribute:</strong>
   <%= @ldapserver.attributename %>
 </p>
 
 <p>
-  <strong>Base:</strong>
+  <strong>Base DN:</strong>
   <%= @ldapserver.base %>
 </p>
 
@@ -38,6 +44,7 @@
 <p>
   <strong>Method:</strong>
   <%= @ldapserver.method %>
+
 </p>
 
 <%= link_to 'Edit', edit_ldapserver_path(@ldapserver), class: "btn btn-warning" %> |

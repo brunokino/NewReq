@@ -1,0 +1,22 @@
+<%= form_for(@publicdomain) do |f| %>
+  <% if @publicdomain.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@publicdomain.errors.count, "error") %> prohibited this publicdomain from being saved:</h2>
+
+      <ul>
+      <% @publicdomain.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :domain %><br>
+    <%= f.text_field :domain, class: "form-control" %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

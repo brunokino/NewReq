@@ -9,6 +9,7 @@ class CreateLdapservers < ActiveRecord::Migration
       t.string :username
       t.string :password
       t.string :method
+      t.string :description
 
       t.timestamps null: false
     end

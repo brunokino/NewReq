@@ -11,6 +11,12 @@
     </div>
   <% end %>
 
+
+
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description, class: "form-control" %>
+  </div>
   <div class="field">
     <%= f.label :domain %><br>
     <%= f.text_field :domain, class: "form-control" %>
@@ -24,11 +30,11 @@
     <%= f.text_field :port, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :attributename %><br>
+    <%= f.label "Login Attribute" %><br>
     <%= f.text_field :attributename, class: "form-control" %>
   </div>
   <div class="field">
-    <%= f.label :base %><br>
+    <%= f.label "Base DN" %><br>
     <%= f.text_field :base, class: "form-control" %>
   </div>
   <div class="field">
@@ -41,7 +47,7 @@
   </div>
   <div class="field">
     <%= f.label :method %><br>
-    <%= f.text_field :method, class: "form-control" %>
+    <%= f.select :method, [['Simple','simple'],['Anonymous','anonymous']], {class: "form-control"} %>
   </div>
   <br>
   <div class="actions">

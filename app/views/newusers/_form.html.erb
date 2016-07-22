@@ -34,6 +34,12 @@
     <%= f.label "Username (suggestion)" %><br>
     <%= f.text_field :username, class: "form-control" %>
   </div>
+  
+  <div class="field">
+    <%= f.label "Email Domain" %><br>
+    <%= collection_select(:newuser, :publicdomain_id, @publicdomains, :id, :domain, {:prompt => false}, class: "form-control") %>
+  </div>
+  
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title, class: "form-control" %>
@@ -77,7 +83,10 @@
     <%= f.label :site_id %><br>
     <%= collection_select(:newuser, :site_id, @sites, :id, :name, {:prompt => false}, class: "form-control") %>
   </div>
-  
+    <div class="field">
+    <%= f.label "Network Domain" %><br>
+    <%= collection_select(:newuser, :ldapserver_id, @ldapservers, :id, :description, {:prompt => false}, class: "form-control") %>
+  </div>
   <div class="field">
     <%= f.label "Phone" %><br>
     <%= f.text_field :phone, class: "form-control" %>

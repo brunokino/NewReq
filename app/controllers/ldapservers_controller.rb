@@ -70,6 +70,6 @@ class LdapserversController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ldapserver_params
-      params.require(:ldapserver).permit(:domain, :host, :port, :attributename, :base, :username, :password, :method)
+      params.require(:ldapserver).permit(:domain, :host, :port, :attributename, :base, :username, :password, :method, :description)
     end
 end

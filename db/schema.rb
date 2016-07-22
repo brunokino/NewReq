@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160624184313) do
+ActiveRecord::Schema.define(version: 20160722114646) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20160624184313) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "domain"
+    t.string   "description"
   end
 
   create_table "newuserldaps", force: :cascade do |t|
@@ -102,9 +103,17 @@ ActiveRecord::Schema.define(version: 20160624184313) do
     t.string   "postalcode"
     t.string   "pobox"
     t.string   "website"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "status"
+    t.string   "ldapserver_id"
+    t.string   "publicdomain_id"
+  end
+
+  create_table "publicdomains", force: :cascade do |t|
+    t.string   "domain"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sites", force: :cascade do |t|

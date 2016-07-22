@@ -34,6 +34,8 @@ class NewusersController < ApplicationController
     @grants = Grant.all
     @companies = Company.all
     @sites = Site.all
+    @publicdomains = Publicdomain.all
+    @ldapservers = Ldapserver.all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @employee }
@@ -47,6 +49,8 @@ class NewusersController < ApplicationController
     @grants = Grant.all
     @companies = Company.all
     @sites = Site.all
+    @publicdomains = Publicdomain.all
+    @ldapservers = Ldapserver.all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @employee }
@@ -102,6 +106,6 @@ class NewusersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def newuser_params
-      params.require(:newuser).permit(:firstname, :lastname, :username, :title, :description, :company_id, :site_id, :department, :grant_id, :phone, :mobile, :homephone, :ipphone, :pager, :Office, :City, :address, :State, :Country, :postalcode, :pobox, :website)
+      params.require(:newuser).permit(:firstname, :lastname, :username, :title, :description, :company_id, :site_id, :department, :grant_id, :phone, :mobile, :homephone, :ipphone, :pager, :Office, :City, :address, :State, :Country, :postalcode, :pobox, :website, :ldapserver_id, :publicdomain_id)
     end
 end

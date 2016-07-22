@@ -1,0 +1,2 @@
+module PublicdomainsHelper
+end

@@ -24,6 +24,8 @@ class CreateNewusers < ActiveRecord::Migration
       t.string :pobox
       t.string :website
       t.string :status
+      t.string :ldapserver_id
+      t.string :publicdomain_id
 
       t.timestamps null: false
     end
