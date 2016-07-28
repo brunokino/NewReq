@@ -42,21 +42,21 @@ class ApplicationController < ActionController::Base
                           :port => @ldapserver.port,
                           :auth => {
                                     :method => :simple,
-                                    :username => "cn=svc-ldap,ou=usuarios,dc=intranet,dc=local",
-                                    :password => "NewReq@123"
+                                    :username => @ldapserver.username,
+                                    :password => @ldapserver.password
                                     }
   end
   
   
-  def ldap_all_users
-    @filter = Net::LDAP::Filter.eq( "sAMAccountName", "*" )
-    @treebase = "ou=usuarios,dc=intranet,dc=local"
+  def ldap_search_users(username_ldap = "*")
+    @filter = Net::LDAP::Filter.eq( @ldapserver.attributename, username_ldap )
+    @treebase = "OU=NewReq,DC=intranet,DC=local"
   end
   
   
   def ldap_my_user
-    @filter = Net::LDAP::Filter.eq( "sAMAccountName", current_user.username )
-    @treebase = "dc=intranet,dc=local"  
+    @filter = Net::LDAP::Filter.eq( @ldapserver.attributename, current_user.username )
+    @treebase = "OU=NewReq,DC=intranet,DC=local"  
   
   end
   

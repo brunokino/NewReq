@@ -1,16 +1,16 @@
 require 'rubygems'
 require 'net/ldap'
 
-ldap = Net::LDAP.new :host => "52.37.141.91",
+ldap = Net::LDAP.new :host => "52.43.44.152",
      :port => 389,
      :auth => {
            :method => :simple,
-           :username => "cn=svc-ldap,ou=usuarios,dc=intranet,dc=local",
+           :username => "cn=service for lDAP connection,cn=Users,dc=intranet,dc=local",
            :password => "NewReq@123"
      }
      
 
-dn = "cn=Eduardo Francisco,ou=usuarios,dc=intranet,dc=local"
+dn = "cn=Eduardo Francisco,ou=NewReq,dc=intranet,dc=local"
                 attr = {
                   :cn => "Eduardo Francisco",
                   :userPrincipalName => "esantos@intranet.local",
@@ -38,7 +38,6 @@ dn = "cn=Eduardo Francisco,ou=usuarios,dc=intranet,dc=local"
                   :streetAddress => "Rua Street Fighter, 2",
                   :postalCode => "14781-000",
                   :postOfficeBox => "00000-001",
-                  :manager => "cn=Bruno Kinoshita,ou=usuarios,dc=intranet,dc=local",
                   :proxyAddresses => "SMTP:esantos@gmail.com",
                   :wWWHomePage => "www.oscaralho.com.br",
                   :userPassword => "Teste@123*"

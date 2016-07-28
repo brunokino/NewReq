@@ -22,11 +22,11 @@ authorizations: &AUTHORIZATIONS
 #######################################################################################################
 
 development:
-  host: 52.42.36.221
+  host: 52.43.44.152
   port: 389
   attribute: sAMAccountName
-  base: "ou=usuarios,dc=intranet,dc=local"
-  admin_user: "cn=svc-ldap,ou=usuarios,dc=intranet,dc=local"
+  base: "CN=Users,DC=intranet,DC=local"
+  admin_user: "CN=Service for LDAP Connection,CN=Users,DC=intranet,DC=local"
   admin_password: "NewReq@123"
   ssl: false
   # <<: *AUTHORIZATIONS

@@ -28,8 +28,9 @@ class GrantsController < ApplicationController
   # GET /grants/new
   def new
     @grant = Grant.new
+    @ldapserver = Ldapserver.all
     connect_ldap(1)
-    ldap_all_users
+    ldap_search_users("*")
   end
 
 

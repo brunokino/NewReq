@@ -1,10 +1,58 @@
 <h4>Listing LDAP Attributes</h4>
-
+<br><br>
 <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>System Data</th>
+      <th>LDAP Data</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  
   <tbody>
-<tr><td><strong>dn:</strong> <%= @newuserldap.dn %></td></tr>
-<tr><td><strong>cn:</strong> <%= @newuserldap.cn %></td></tr>
-<tr><td><strong>userPrincipalName:</strong> <%= @newuserldap.userPrincipalName %></td></tr>
+    
+    <tr>
+      <td><strong>dn:</strong></td>
+      <td><%= @newuserldap.dn %></td>
+      <td><%=  @dn %></td>
+      <td>
+        <% if (@newuserldap.dn == @dn) then %>
+          <span class="label label-success">Match</span>
+        <%  else %>
+          <span class="label label-danger">Not Match</span>
+        <%  end %>
+      </td>
+    </tr>
+   
+   
+    <tr>
+      <td><strong>cn:</strong></td>
+      <td><%= @newuserldap.cn %></td>
+      <td><%=  @cn %></td>
+      <td>
+        <% if (@newuserldap.cn == @cn) then %>
+          <span class="label label-success">Match</span>
+        <%  else %>
+          <span class="label label-danger">Not Match</span>
+        <%  end %>
+      </td>
+    </tr>
+    
+    <tr>
+      <td><strong>userPrincipalName:</strong></td>
+      <td><%= @newuserldap.userPrincipalName %></td>
+      <td><%=  @userPrincipalName %></td>
+      <td>
+        <% if (@newuserldap.userPrincipalName == @userPrincipalName) then %>
+          <span class="label label-success">Match</span>
+        <%  else %>
+          <span class="label label-danger">Not Match</span>
+        <%  end %>
+      </td>
+    </tr>
+    
+
 <tr><td><strong>E-mail:</strong> <%= @newuserldap.mail %></td></tr>
 <tr><td><strong>sAMAccountName:</strong> <%= @newuserldap.sAMAccountName %></td></tr>
 <tr><td><strong>name:</strong> <%= @newuserldap.name %></td></tr>
@@ -35,3 +83,4 @@
 <tr><td><%= link_to 'Add user to LDAP', {:controller => :ldap, :action => :build, :id => @newuser.id}, class: "btn btn-primary" %></td></tr>
   </tbody>
 </table>
+<%= @dn %>

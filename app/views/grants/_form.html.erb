@@ -29,7 +29,7 @@
   
   <select name="name">
     <%  @ldap.search( :base => @treebase, :filter => @filter ) do |entry| %>
-      <option value="<%= entry.displayName %>"><%= entry.displayName %></option>
+      <option value="<%= entry.cn %>"><%= entry.cn %></option>
     <% end %>
   </select>
   
@@ -60,7 +60,7 @@
 
   <%  @ldap.search( :base => @treebase, :filter => @filter ) do |entry| %>
       <%= entry.sAMAccountName %><BR>
-      <%= entry.displayName %><BR>
+      <%= entry.cn %><BR>
       <%= entry.dn %><BR><BR>
   <% end %>
   

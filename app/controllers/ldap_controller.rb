@@ -9,6 +9,23 @@ class LdapController < ApplicationController
 
 
     def show
+      connect_ldap(@ldapserver.id)
+      ldap_search_users(@newuserldap.sAMAccountName)
+      @ldap.search( :base => @treebase, :filter => @filter ) do |entry|
+      @dn = entry.dn
+      @cn = entry.cn
+      @userPrincipalName = entry.userPrincipalName
+
+      
+      entry.each do |attribute, values|
+        puts "   #{attribute}:"
+        values.each do |value|
+          puts "      --->#{value}"
+          end
+        end
+      end
+      
+      
     end
 
 
@@ -119,6 +136,7 @@ private
       @newuser = Newuser.find(params[:id])
       @publicdomain = Publicdomain.find(@newuser.publicdomain_id)
       @ldapserver = Ldapserver.find(@newuser.ldapserver_id)
+      
     end
 
     #####################################################
@@ -141,11 +159,11 @@ private
       
       @domain = @ldapserver.domain        # You need to bring from database
       @pubdomain = @publicdomain.domain   # You need to create a registration screen for public domain
-      @ou = ",ou=usuarios,dc=intranet,dc=local" #You need to create a registration screen for Organizational Units
+      @ou = ",OU=NewReq,DC=intranet,DC=local" #You need to create a registration screen for Organizational Units
       @cn = @newuser.firstname + " " + @newuser.lastname
       @userPrincipalName = @newuser.username + "@" + @domain
       @mail = @newuser.username + "@" + @pubdomain
-      @dn = "cn=" + @cn + @ou
+      @dn = "CN=" + @cn + @ou
       @sAMAccountName = @newuser.username
       @name = @cn
       @displayname = @cn
