@@ -1,10 +1,15 @@
 class LdapController < ApplicationController
     before_action :set_newuser, only: [:show, :create, :overwrite, :build]
-    before_action :set_newuserldap, only: [:show, :build, :destroy, :overwrite]
+    before_action :set_newuserldap, only: [:show, :build, :destroy, :overwrite, :edit]
     before_action :load_attributes, only: [:create]
     
     def index
       @newuserldap = Newuserldap.all
+    end
+    
+    # GET /ldap/1/edit
+    def edit
+      @newuserldap = Newuserldap.where(newusers_id: params[:id]).first
     end
 
 
@@ -15,8 +20,6 @@ class LdapController < ApplicationController
       @dn = entry.dn
       @cn = entry.cn
       @userPrincipalName = entry.userPrincipalName
-
-      
       entry.each do |attribute, values|
         puts "   #{attribute}:"
         values.each do |value|
@@ -24,9 +27,9 @@ class LdapController < ApplicationController
           end
         end
       end
-      
-      
     end
+
+
 
 
     def create
@@ -74,7 +77,6 @@ class LdapController < ApplicationController
 
     def build
       connect_ldap(@ldapserver.id)
-
       dn = @newuserldap.dn
                 attr = {
                   :cn => @newuserldap.cn,
@@ -107,9 +109,26 @@ class LdapController < ApplicationController
                   :wWWHomePage => @newuserldap.wWWHomePage,
                   :userPassword => @newuserldap.userPassword
                 }.reject { |key,value| value.empty? }
-                
       @ldap.add(:dn => dn, :attributes => attr)
     end
+
+
+
+
+    def update
+      @newuserldap = Newuserldap.where(newusers_id: params[:id]).first
+      respond_to do |format|
+        if @newuserldap.update(ldap_params)
+          #format.html { redirect_to @newuserldap, notice: 'Grant was successfully updated.' }
+          format.html { redirect_to action: 'show', id: params[:id]}
+          format.json { render :show, status: :ok, location: @newuserldap }
+        else
+          format.html { render :edit }
+        format.json { render json: @newuserldap.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+
 
 
 
@@ -136,7 +155,6 @@ private
       @newuser = Newuser.find(params[:id])
       @publicdomain = Publicdomain.find(@newuser.publicdomain_id)
       @ldapserver = Ldapserver.find(@newuser.ldapserver_id)
-      
     end
 
     #####################################################
@@ -155,8 +173,6 @@ private
     
     
     def load_attributes
-      
-      
       @domain = @ldapserver.domain        # You need to bring from database
       @pubdomain = @publicdomain.domain   # You need to create a registration screen for public domain
       @ou = ",OU=NewReq,DC=intranet,DC=local" #You need to create a registration screen for Organizational Units
@@ -193,5 +209,10 @@ private
       @newusers_id = @newuser.id
     end
 
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def ldap_params
+      params.require(:newuserldap).permit(:dn, :cn, :userPrincipalName, :mail, :sAMAccountName, :name, :displayname, :givenname, :sn, :telephoneNumber, :facsimileTelephoneNumber, :homePhone, :ipPhone, :mobile, :l, :st, :title, :description, :c, :department, :company, :streetAddress, :postalCode, :postOfficeBox, :manager, :proxyAddresses, :wWWHomePage, :userPassword)
+    end
     
 end

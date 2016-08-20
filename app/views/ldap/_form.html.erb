@@ -1,0 +1,132 @@
+<%= form_for @newuserldap, url: ldap_path do |f| %>
+  <% if @newuserldap.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@newuserldap.errors.count, "error") %> prohibited this ldapserver from being saved:</h2>
+
+      <ul>
+      <% @newuserldap.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="field">
+    <%= f.label :dn %><br>
+    <%= f.text_field :dn, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :cn %><br>
+    <%= f.text_field :cn, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :userPrincipalName %><br>
+    <%= f.text_field :userPrincipalName, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :mail %><br>
+    <%= f.text_field :mail, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :sAMAccountName %><br>
+    <%= f.text_field :sAMAccountName, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :displayname %><br>
+    <%= f.text_field :displayname, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :givenname %><br>
+    <%= f.text_field :givenname, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :sn %><br>
+    <%= f.text_field :sn, class: "form-control" %>
+  </div>  
+  <div class="field">
+    <%= f.label :telephoneNumber %><br>
+    <%= f.text_field :telephoneNumber, class: "form-control" %>
+  </div>    
+  <div class="field">
+    <%= f.label :facsimileTelephoneNumber %><br>
+    <%= f.text_field :facsimileTelephoneNumber, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :homePhone %><br>
+    <%= f.text_field :homePhone, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :ipPhone %><br>
+    <%= f.text_field :ipPhone, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :mobile %><br>
+    <%= f.text_field :mobile, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :l %><br>
+    <%= f.text_field :l, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :st %><br>
+    <%= f.text_field :st, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :c %><br>
+    <%= f.text_field :c, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :department %><br>
+    <%= f.text_field :department, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :company %><br>
+    <%= f.text_field :company, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :streetAddress %><br>
+    <%= f.text_field :streetAddress, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :postalCode %><br>
+    <%= f.text_field :postalCode, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :postOfficeBox %><br>
+    <%= f.text_field :postOfficeBox, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :manager %><br>
+    <%= f.text_field :manager, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :proxyAddresses %><br>
+    <%= f.text_field :proxyAddresses, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :wWWHomePage %><br>
+    <%= f.text_field :wWWHomePage, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :userPassword %><br>
+    <%= f.text_field :userPassword, class: "form-control" %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

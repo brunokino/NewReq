@@ -1,3 +1,4 @@
+<p id="notice"><%= notice %></p>
 <h4>Listing LDAP Attributes</h4>
 <br><br>
 <table class="table table-striped">
@@ -28,10 +29,11 @@
    
     <tr>
       <td><strong>cn:</strong></td>
-      <td><%= @newuserldap.cn %></td>
+      <%  cn = '["' + @newuserldap.cn + '"]' %>
+      <td><%= cn %></td>
       <td><%=  @cn %></td>
       <td>
-        <% if (@newuserldap.cn == @cn) then %>
+        <% if (cn == @cn) then %>
           <span class="label label-success">Match</span>
         <%  else %>
           <span class="label label-danger">Not Match</span>
@@ -41,10 +43,11 @@
     
     <tr>
       <td><strong>userPrincipalName:</strong></td>
-      <td><%= @newuserldap.userPrincipalName %></td>
+      <%  userPrincipalName = '["' + @newuserldap.userPrincipalName + '"]' %>
+      <td><%= userPrincipalName %></td>
       <td><%=  @userPrincipalName %></td>
       <td>
-        <% if (@newuserldap.userPrincipalName == @userPrincipalName) then %>
+        <% if (userPrincipalName == @userPrincipalName) then %>
           <span class="label label-success">Match</span>
         <%  else %>
           <span class="label label-danger">Not Match</span>
@@ -81,6 +84,8 @@
 <tr><td><strong>userPassword:</strong> <%= @newuserldap.userPassword %></td></tr>
 <tr><td></td></tr>
 <tr><td><%= link_to 'Add user to LDAP', {:controller => :ldap, :action => :build, :id => @newuser.id}, class: "btn btn-primary" %></td></tr>
+<tr><td><%= link_to 'Edit attributes', {:controller => :ldap, :action => :edit, :id => @newuser.id}, class: "btn btn-warning" %></td></tr>
   </tbody>
 </table>
-<%= @dn %>
+
+
