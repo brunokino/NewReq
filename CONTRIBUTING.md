@@ -1,1 +1,2 @@
-Please see the instructions at otrs.github.io.
+Username: svc-ldap
+Password: NewReq@123
