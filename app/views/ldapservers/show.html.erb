@@ -1,5 +1,23 @@
 <p id="notice"><%= notice %></p>
 
+<BR>
+<BR>
+  
+<%
+require 'net/ldap'
+          ldap2 = Net::LDAP.new
+          ldap2.host = @ldapserver.host
+          ldap2.port = @ldapserver.port
+          ldap2.auth @ldapserver.username, @ldapserver.password
+%>
+
+<% if ldap2.bind %>
+<h4><strong><span class="label label-success">Connected</span></strong></h4>
+<%  else %>
+<strong><span class="label label-danger">Failed</span></strong>
+<%  end %>
+
+<BR>
 
 <p>
   <strong>Description:</strong>
@@ -46,6 +64,7 @@
   <%= @ldapserver.method %>
 
 </p>
+
 
 <%= link_to 'Edit', edit_ldapserver_path(@ldapserver), class: "btn btn-warning" %> |
 <%= link_to 'Back', ldapservers_path, class: "btn btn-default" %>

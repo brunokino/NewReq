@@ -35,7 +35,7 @@ class LdapController < ApplicationController
         #if @newuserldap.mail == entry2.mail[0]
         #   @check_mail = @check_mail + 1
         #end
-        
+
       end 
       
       
