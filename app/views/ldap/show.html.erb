@@ -6,57 +6,63 @@
     <tr>
       <th>Attribute</th>
       <th>System Data</th>
-      <th>LDAP Data</th>
       <th>Status</th>
     </tr>
   </thead>
-  
   <tbody>
-    
+
     <tr>
       <td><strong>dn:</strong></td>
       <td><%= @newuserldap.dn %></td>
-      <td><%=  @dn %></td>
       <td>
-        <% if (@newuserldap.dn == @dn) then %>
-          <span class="label label-success">Match</span>
-        <%  else %>
-          <span class="label label-danger">Not Match</span>
-        <%  end %>
+      <% if (@check_dn == 0) then %>
+          <span class="label label-success">OK</span>
+        <% else %>
+          <span class="label label-danger">CONFLICT (<%= @check_dn %>)</span>
+        <% end %>
       </td>
     </tr>
-   
-   
+
     <tr>
       <td><strong>cn:</strong></td>
-      <%  cn = '["' + @newuserldap.cn + '"]' %>
-      <td><%= cn %></td>
-      <td><%=  @cn %></td>
+      <td><%= @newuserldap.cn %></td>
       <td>
-        <% if (cn == @cn) then %>
-          <span class="label label-success">Match</span>
-        <%  else %>
-          <span class="label label-danger">Not Match</span>
-        <%  end %>
+        <% if (@check_cn == 0) then %>
+          <span class="label label-success">OK</span>
+        <% else %>
+          <span class="label label-danger">CONFLICT (<%= @check_cn %>)</span>
+        <% end %>
       </td>
     </tr>
     
     <tr>
       <td><strong>userPrincipalName:</strong></td>
-      <%  userPrincipalName = '["' + @newuserldap.userPrincipalName + '"]' %>
-      <td><%= userPrincipalName %></td>
-      <td><%=  @userPrincipalName %></td>
+      <td><%= @newuserldap.userPrincipalName %></td>
       <td>
-        <% if (userPrincipalName == @userPrincipalName) then %>
-          <span class="label label-success">Match</span>
-        <%  else %>
-          <span class="label label-danger">Not Match</span>
-        <%  end %>
+        <% if (@check_userPrincipalName == 0) then %>
+          <span class="label label-success">OK</span>
+        <% else %>
+          <span class="label label-danger">CONFLICT (<%= @check_userPrincipalName %>)</span>
+        <% end %>
       </td>
     </tr>
     
+    <tr>
+      <td><strong>mail:</strong></td>
+      <td><%= @newuserldap.mail %></td>
+      <td>
+        <% if (@check_mail == 0) then %>
+          <span class="label label-success">OK</span>
+        <%  else %>
+          <span class="label label-danger">CONFLICT (<%= @check_mail %>)</span>
+        <%  end %>
+      </td>
+    </tr>
 
-<tr><td><strong>E-mail:</strong> <%= @newuserldap.mail %></td></tr>
+
+
+
+
 <tr><td><strong>sAMAccountName:</strong> <%= @newuserldap.sAMAccountName %></td></tr>
 <tr><td><strong>name:</strong> <%= @newuserldap.name %></td></tr>
 <tr><td><strong>displayname:</strong> <%= @newuserldap.displayname %></td></tr>

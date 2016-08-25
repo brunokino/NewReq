@@ -15,18 +15,30 @@ class LdapController < ApplicationController
 
     def show
       connect_ldap(@ldapserver.id)
-      ldap_search_users(@newuserldap.sAMAccountName)
-      @ldap.search( :base => @treebase, :filter => @filter ) do |entry|
-      @dn = entry.dn
-      @cn = entry.cn
-      @userPrincipalName = entry.userPrincipalName
-      entry.each do |attribute, values|
-        puts "   #{attribute}:"
-        values.each do |value|
-          puts "      --->#{value}"
-          end
+      ldap_all_users
+      
+      @check_dn = 0
+      @check_cn = 0
+      @check_userPrincipalName = 0
+      @check_mail = 0
+        
+      @ldap.search( :base => @treebase, :filter => @filter ) do |entry2| 
+        if @newuserldap.dn == entry2.dn
+          @check_dn = @check_dn + 1
         end
-      end
+        if @newuserldap.cn == entry2.cn[0]
+          @check_cn = @check_cn + 1
+        end
+        if @newuserldap.userPrincipalName == entry2.userPrincipalName[0]
+           @check_userPrincipalName = @check_userPrincipalName + 1
+        end
+        #if @newuserldap.mail == entry2.mail[0]
+        #   @check_mail = @check_mail + 1
+        #end
+        
+      end 
+      
+      
     end
 
 

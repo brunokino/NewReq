@@ -57,7 +57,13 @@ class ApplicationController < ActionController::Base
   def ldap_my_user
     @filter = Net::LDAP::Filter.eq( @ldapserver.attributename, current_user.username )
     @treebase = "OU=NewReq,DC=intranet,DC=local"  #Get this from the database
-  
   end
+  
+  
+  def ldap_all_users
+    @filter = Net::LDAP::Filter.eq( @ldapserver.attributename, "*" )
+    @treebase = "OU=NewReq,DC=intranet,DC=local"  #Get this from the database
+  end
+  
   
 end
