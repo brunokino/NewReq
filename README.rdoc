@@ -1,8 +1,9 @@
 == What is NewReq?
 
-NewReq is an open source project under development (Looking for contributions). 
-It will automate the process of new user request and creation in Active Directory/LDAP using friendly web form and approval flow.
-It is distributed under the GNU AFFERO General Public License (AGPL)
+The NewReq allows you create a new user in Active Directory / LDAP with JUST 1 CLICK. 
+It can be deployed in enterprises to automate access granting process and make life easier for the IT team. 
+The NewReq is an open source project under development.
+
 
 
 == Some problems in the company that can be solved by NewReq:
@@ -25,7 +26,7 @@ It is distributed under the GNU AFFERO General Public License (AGPL)
     
     1 - Loging using LDAP account (working)
     2 - Automated creation of new user in the LDAP Server (working)
-    3 - Customizable LDAP user attributes (working part)
+    3 - Customizable LDAP user attributes (working)
 
 
 == Contributions:
@@ -46,8 +47,6 @@ https://github.com/NewReq/NewReq
 Database Schema:
 http://diagrams.seaquail.net/Diagram.aspx?ID=26795
 
-Diagram processes:
-In development
 
 If you have any questions to start a contribution, please contact brunokino@gmail.com
 
