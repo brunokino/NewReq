@@ -36,10 +36,7 @@ We are looking for contributions for the project:
 * Ruby on Rails development
 * Frontend development
 * Ideas and concepts
-* Management of distributed teams
 
-Project planning:
-https://www.pivotaltracker.com/projects/1536033
 
 Source Code:
 https://github.com/NewReq/NewReq
