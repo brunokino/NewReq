@@ -12,9 +12,13 @@ require 'net/ldap'
 %>
 
 <% if ldap2.bind %>
-<h4><strong><span class="label label-success">Connected</span></strong></h4>
+<div class="alert alert-success" role="alert">
+<p><strong>Status:</strong> <%= ldap2.get_operation_result.message %></p>
+</div>
 <%  else %>
-<strong><span class="label label-danger">Failed</span></strong>
+<div class="alert alert-danger" role="alert">
+<p><strong>Status:</strong> <%= ldap2.get_operation_result.message %></p>
+</div>
 <%  end %>
 
 <BR>

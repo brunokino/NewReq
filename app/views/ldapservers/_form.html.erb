@@ -20,26 +20,31 @@
   <div class="field">
     <%= f.label :domain %><br>
     <%= f.text_field :domain, class: "form-control" %>
+   <p>Example: intranet.local</p>
   </div>
   <div class="field">
     <%= f.label :host %><br>
     <%= f.text_field :host, class: "form-control" %>
+    <p>Example: 172.16.0.1</p>
   </div>
   <div class="field">
     <%= f.label :port %><br>
     <%= f.text_field :port, class: "form-control" %>
+    <p>Example: 389</p>
   </div>
   <div class="field">
     <%= f.label "Login Attribute" %><br>
-    <%= f.text_field :attributename, class: "form-control" %>
+    <%= f.select :attributename, [['sAMAccountName','sAMAccountName']], {class: "form-control"} %>
   </div>
   <div class="field">
     <%= f.label "Base DN" %><br>
     <%= f.text_field :base, class: "form-control" %>
+    <p>Example: CN=Users,DC=intranet,DC=local</p>
   </div>
   <div class="field">
     <%= f.label :username %><br>
     <%= f.text_field :username, class: "form-control" %>
+    <p>Example: CN=NewReq Admin,CN=Users,DC=intranet,DC=local</p>
   </div>
   <div class="field">
     <%= f.label :password %><br>
