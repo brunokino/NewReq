@@ -89,9 +89,12 @@
 <tr><td><strong>wWWHomePage:</strong> <%= @newuserldap.wWWHomePage %></td></tr>
 <tr><td><strong>userPassword:</strong> <%= @newuserldap.userPassword %></td></tr>
 <tr><td></td></tr>
-<tr><td><%= link_to 'Add user to LDAP', {:controller => :ldap, :action => :build, :id => @newuser.id}, class: "btn btn-primary" %></td></tr>
-<tr><td><%= link_to 'Edit attributes', {:controller => :ldap, :action => :edit, :id => @newuser.id}, class: "btn btn-warning" %></td></tr>
   </tbody>
 </table>
-
+<% if (@check_all == 0) %>
+<tr><td><%= link_to 'Add user to LDAP', {:controller => :ldap, :action => :build, :id => @newuser.id}, class: "btn btn-primary" %></td></tr>
+<% else %>
+<tr><td><%= link_to 'Add user to LDAP', {:controller => :ldap, :action => :build, :id => @newuser.id}, class: "btn btn-primary disabled" %></td></tr>
+<% end %>
+<tr><td><%= link_to 'Edit attributes', {:controller => :ldap, :action => :edit, :id => @newuser.id}, class: "btn btn-warning" %></td></tr>
 

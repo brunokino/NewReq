@@ -21,6 +21,7 @@ class LdapController < ApplicationController
       @check_cn = 0
       @check_userPrincipalName = 0
       @check_mail = 0
+      @check_all = 0
         
       @ldap.search( :base => @treebase, :filter => @filter ) do |entry2| 
         if @newuserldap.dn == entry2.dn
@@ -38,6 +39,9 @@ class LdapController < ApplicationController
 
       end 
       
+      if (@check_cn or @check_dn or @check_userPrincipalName or @check_mail) > 0
+        @check_all = 1
+      end
       
     end
 
