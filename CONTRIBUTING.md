@@ -6,8 +6,14 @@ Important informations:
 
 Data from the initial setting can be imported through the file located at: db/seeds.rb
 
-For now, you can use our Active Directory server and the primary user for testing:
+For now, you can use our Active Directory server:
+IP: 52.43.44.152
 Username: INTRANET\svc-ldap
+Password: NewReq@123
+
+Login NewReq:
+
+Username: test
 Password: NewReq@123
 
 
