@@ -1,7 +1,9 @@
 # NewReq
 
 The NewReq is an open source project under development.
-The NewReq allows you create a new user in Active Directory with just 1 click. 
+
+The NewReq allows you create a new user in Active Directory with just 1 click.
+
 It can be deployed in enterprises to automate access granting process and make life easier for the IT team. 
 
 
