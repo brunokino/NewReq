@@ -1,11 +1,11 @@
-== NewReq
+# NewReq
 
 The NewReq is an open source project under development.
 The NewReq allows you create a new user in Active Directory with just 1 click. 
 It can be deployed in enterprises to automate access granting process and make life easier for the IT team. 
 
 
-== Key Features:
+## Key Features:
 
 * Self Service access request
 * Approval workflow
@@ -13,7 +13,7 @@ It can be deployed in enterprises to automate access granting process and make l
 * Customizable LDAP user attributes
 
 
-== Contributing:
+## Contributing:
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us
 
@@ -23,6 +23,14 @@ http://diagrams.seaquail.net/Diagram.aspx?ID=26795
 
 
 
-== License
+## Authors
+
+* **Bruno Kinoshita** - *Initial work* - [brunokino](https://github.com/brunokino)
+
+See also the list of [contributors](AUTHORS.md) who participated in this project.
+
+
+## License
 
 It is distributed under the AFFERO GNU General Public License - see the accompanying [COPYING](COPYING) file for more details.
+
