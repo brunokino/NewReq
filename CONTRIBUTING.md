@@ -5,6 +5,10 @@ Any collaboration will be very important for the project.
 
 If you have any difficulty in starting the contributions, you can contact Bruno Kinoshita (brunokino@gmail.com)
 
+
+Discussions and product development activities are all listed in the [Issues page](https://github.com/NewReq/NewReq/issues)
+
+
 ## Important informations:
 
 ### Active Directory Server:
