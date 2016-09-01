@@ -23,4 +23,8 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
+  database: newreq
   pool: 5
+  username: ubuntu
+  password: NewReq@123
+  
