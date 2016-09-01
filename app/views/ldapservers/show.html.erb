@@ -3,21 +3,14 @@
 <BR>
 <BR>
   
-<%
-require 'net/ldap'
-          ldap2 = Net::LDAP.new
-          ldap2.host = @ldapserver.host
-          ldap2.port = @ldapserver.port
-          ldap2.auth @ldapserver.username, @ldapserver.password
-%>
 
-<% if ldap2.bind %>
+<% if @ldaptest == 1 %>
 <div class="alert alert-success" role="alert">
-<p><strong>Status:</strong> <%= ldap2.get_operation_result.message %></p>
+<p><strong>Status:</strong> <%= @message %></p>
 </div>
 <%  else %>
 <div class="alert alert-danger" role="alert">
-<p><strong>Status:</strong> <%= ldap2.get_operation_result.message %></p>
+<p><strong>Status:</strong> <%= @message %></p>
 </div>
 <%  end %>
 

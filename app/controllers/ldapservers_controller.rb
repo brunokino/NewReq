@@ -10,6 +10,23 @@ class LdapserversController < ApplicationController
   # GET /ldapservers/1
   # GET /ldapservers/1.json
   def show
+    
+    require 'net/ldap'
+    ldap = Net::LDAP.new(:host => @ldapserver.host, :port => @ldapserver.port)
+    if ldap.bind( :method => :simple, 
+                  :username => @ldapserver.username,
+                  :password => @ldapserver.password,
+                  :connect_timeout => 3)
+                  # authentication succeeded
+                  @ldaptest = 1
+                  @message = ldap.get_operation_result.message
+    else
+      # authentication failed
+      @ldaptest = 0
+      @message = ldap.get_operation_result.message
+    end
+
+    
   end
 
   # GET /ldapservers/new
