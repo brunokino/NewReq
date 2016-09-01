@@ -1,4 +1,4 @@
-{<img src="https://travis-ci.org/NewReq/NewReq.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/NewReq/NewReq]
+[<img src="https://travis-ci.org/NewReq/NewReq.svg?branch=master" alt="Build Status" />](https://travis-ci.org/NewReq/NewReq)
 
 # NewReq
 
