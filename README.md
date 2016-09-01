@@ -1,3 +1,5 @@
+{<img src="https://travis-ci.org/NewReq/NewReq.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/NewReq/NewReq]
+
 # NewReq
 
 The NewReq is an open source project under development.
