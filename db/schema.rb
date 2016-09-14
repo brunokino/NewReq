@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160722114646) do
+ActiveRecord::Schema.define(version: 20160722112404) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -22,15 +22,16 @@ ActiveRecord::Schema.define(version: 20160722114646) do
 
   create_table "grants", force: :cascade do |t|
     t.string   "username"
+    t.string   "cn"
+    t.string   "name"
     t.boolean  "manager"
     t.boolean  "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "cn"
-    t.string   "name"
   end
 
   create_table "ldapservers", force: :cascade do |t|
+    t.string   "domain"
     t.string   "host"
     t.string   "port"
     t.string   "attributename"
@@ -38,10 +39,9 @@ ActiveRecord::Schema.define(version: 20160722114646) do
     t.string   "username"
     t.string   "password"
     t.string   "method"
+    t.string   "description"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.string   "domain"
-    t.string   "description"
   end
 
   create_table "newuserldaps", force: :cascade do |t|
@@ -75,9 +75,9 @@ ActiveRecord::Schema.define(version: 20160722114646) do
     t.string   "proxyAddresses"
     t.string   "wWWHomePage"
     t.string   "userPassword"
+    t.string   "newusers_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.string   "newusers_id"
   end
 
   create_table "newusers", force: :cascade do |t|
@@ -103,11 +103,11 @@ ActiveRecord::Schema.define(version: 20160722114646) do
     t.string   "postalcode"
     t.string   "pobox"
     t.string   "website"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
     t.string   "status"
     t.string   "ldapserver_id"
     t.string   "publicdomain_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "publicdomains", force: :cascade do |t|
@@ -128,17 +128,17 @@ ActiveRecord::Schema.define(version: 20160722114646) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "username",            default: "", null: false
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",       default: 0, null: false
+    t.integer  "sign_in_count",       default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.string   "username"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
-  add_index "users", ["username"], name: "index_users_on_username"
+  add_index "users", ["username"], name: "index_users_on_username", unique: true
 
 end
